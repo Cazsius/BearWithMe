@@ -1,0 +1,16 @@
+[
+{
+  "modid": "grizzlybear",
+  "name": "GrizzlyBear",
+  "description": "A simple mod that adds bear variants to minecraft known as the Grizzly Bear, Black Bear, and Panda Bear!",
+  "version": "${version}",
+  "mcversion": "${mcversion}",
+  "url": "",
+  "updateUrl": "",
+  "authorList": ["MrTrollNugNug"],
+  "credits": "Lewis_McReu, Thutmose,stohun01",
+  "logoFile": "",
+  "screenshots": [],
+  "dependencies": []
+}
+]
