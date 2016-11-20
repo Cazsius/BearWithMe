@@ -25,7 +25,7 @@ public class CommonProxy {
 		EntityRegistry.registerModEntity(EntityGrizzlyBear.class, "grizzlybear", 1,
 				BearWithMe.instance, 80, 3, true, new Color(255, 255, 255).getRGB(),
 				new Color(119, 84, 57).getRGB());
-		EntityRegistry.addSpawn(EntityGrizzlyBear.class, 7, 1, 1, EnumCreatureType.MONSTER,
+		EntityRegistry.addSpawn(EntityGrizzlyBear.class, 2, 1, 1, EnumCreatureType.MONSTER,
 				gList.toArray(new Biome[0]));
 		
 		
@@ -35,10 +35,10 @@ public class CommonProxy {
 		Collections.addAll(bList, BiomeDictionary.getBiomesForType(Type.SAVANNA));
 		Collections.addAll(bList, BiomeDictionary.getBiomesForType(Type.SPOOKY));
 		
-		EntityRegistry.registerModEntity(EntityBlackBear.class, "blackbear", 1,
+		EntityRegistry.registerModEntity(EntityBlackBear.class, "blackbear", 2,
 				BearWithMe.instance, 80, 3, true, new Color(255, 255, 255).getRGB(),
 				new Color(0, 0, 0).getRGB());
-		EntityRegistry.addSpawn(EntityBlackBear.class, 7, 1, 1, EnumCreatureType.MONSTER,
+		EntityRegistry.addSpawn(EntityBlackBear.class, 2, 1, 1, EnumCreatureType.MONSTER,
 				bList.toArray(new Biome[0]));
 		
 		

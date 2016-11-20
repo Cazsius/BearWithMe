@@ -2,7 +2,7 @@
 {
   "modid": "grizzlybear",
   "name": "GrizzlyBear",
-  "description": "A simple mod that adds a bear variant to minecraft known as the Grizzly Bear!",
+  "description": "A simple mod that adds bear variants to minecraft known as the Grizzly Bear, Black Bear, and Panda Bear!",
   "version": "${version}",
   "mcversion": "${mcversion}",
   "url": "",
