@@ -41,6 +41,9 @@ public class CommonProxy {
 		EntityRegistry.addSpawn(EntityBlackBear.class, 2, 1, 1, EnumCreatureType.MONSTER,
 				bList.toArray(new Biome[0]));
 		
+		//sounds
+		
+		
 		
 	}
 
