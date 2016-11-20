@@ -6,6 +6,7 @@ import java.util.Collection;
 import java.util.Collections;
 
 import net.minecraft.entity.EnumCreatureType;
+import net.minecraft.util.ResourceLocation;
 import net.minecraft.world.biome.Biome;
 import net.minecraftforge.common.BiomeDictionary;
 import net.minecraftforge.common.BiomeDictionary.Type;
@@ -22,8 +23,7 @@ public class CommonProxy {
 		Collections.addAll(gList, BiomeDictionary.getBiomesForType(Type.PLAINS));
 		Collections.addAll(gList, BiomeDictionary.getBiomesForType(Type.FOREST));
 		Collections.addAll(gList, BiomeDictionary.getBiomesForType(Type.HILLS));
-		EntityRegistry.registerModEntity(EntityGrizzlyBear.class, "grizzlybear", 1,
-				BearWithMe.instance, 80, 3, true, new Color(255, 255, 255).getRGB(),
+		EntityRegistry.registerModEntity(new ResourceLocation("bearwithme", "entity/new_grizzly_bear"), EntityGrizzlyBear.class, "grizzlybear", 1, BearWithMe.instance, 80, 3, true, new Color(255, 255, 255).getRGB(),
 				new Color(119, 84, 57).getRGB());
 		EntityRegistry.addSpawn(EntityGrizzlyBear.class, 2, 1, 1, EnumCreatureType.MONSTER,
 				gList.toArray(new Biome[0]));
@@ -35,7 +35,7 @@ public class CommonProxy {
 		Collections.addAll(bList, BiomeDictionary.getBiomesForType(Type.SAVANNA));
 		Collections.addAll(bList, BiomeDictionary.getBiomesForType(Type.SPOOKY));
 		
-		EntityRegistry.registerModEntity(EntityBlackBear.class, "blackbear", 2,
+		EntityRegistry.registerModEntity(new ResourceLocation("bearwithme", "entity/black_bear"), EntityBlackBear.class, "blackbear", 2,
 				BearWithMe.instance, 80, 3, true, new Color(255, 255, 255).getRGB(),
 				new Color(0, 0, 0).getRGB());
 		EntityRegistry.addSpawn(EntityBlackBear.class, 2, 1, 1, EnumCreatureType.MONSTER,
