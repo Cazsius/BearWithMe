@@ -1,4 +1,4 @@
-package com.mrtrollnugnug.bearwithme;
+package com.mrtrollnugnug.bearwithme.client;
 
 import net.minecraft.init.Bootstrap;
 import net.minecraft.init.SoundEvents;

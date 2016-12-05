@@ -7,8 +7,8 @@
   "mcversion": "${mcversion}",
   "url": "",
   "updateUrl": "",
-  "authorList": ["MrTrollNugNug"],
-  "credits": "Lewis_McReu, Thutmose,stohun01",
+  "authorList": ["MrTrollNugNug","Lewis_McReu"],
+  "credits": "Thutmose, stohun01, wiiv",
   "logoFile": "",
   "screenshots": [],
   "dependencies": []
