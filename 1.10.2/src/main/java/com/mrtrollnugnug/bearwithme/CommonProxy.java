@@ -41,6 +41,15 @@ public class CommonProxy {
 		EntityRegistry.addSpawn(EntityBlackBear.class, 2, 1, 1, EnumCreatureType.MONSTER,
 				bList.toArray(new Biome[0]));
 		
+		Collection<Biome> pList = new ArrayList<>();
+		Collections.addAll(pList, BiomeDictionary.getBiomesForType(Type.JUNGLE));	
+		EntityRegistry.registerModEntity(EntityPandaBear.class, "pandabear", 3,
+				BearWithMe.instance, 80, 3, true, new Color(255, 255, 255).getRGB(),
+				new Color(0, 0, 0).getRGB());
+		EntityRegistry.addSpawn(EntityPandaBear.class, 2, 1, 1, EnumCreatureType.MONSTER,
+				pList.toArray(new Biome[0]));
+		
+		
 		//sounds
 		
 		

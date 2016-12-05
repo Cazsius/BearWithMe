@@ -30,6 +30,15 @@ public class ClientProxy extends CommonProxy
 	    		return new RenderBlackBear<>(manager,new ModelPolarBear(), 0.7F);  
 	        }
         });
+   	 
+   	 RenderingRegistry.registerEntityRenderingHandler(EntityPandaBear.class, new IRenderFactory<EntityPandaBear>()
+    	{
+	    	@Override
+	    	public Render<? super EntityPandaBear> createRenderFor(RenderManager manager)
+	    	{
+	    		return new RenderPandaBear<>(manager,new ModelPolarBear(), 0.7F);  
+	        }
+        });
 	}
 }
 
