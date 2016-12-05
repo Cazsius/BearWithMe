@@ -27,7 +27,7 @@ apply plugin: 'java'
 sourceCompatibility=1.8
 targetCompatibility=1.8
 
-version = "1.10.2-1.2"
+version = "1.10.2-1.3ALPHA"
 group= "com.mrtrollnugnug.grizzlybear" // http://maven.apache.org/guides/mini/guide-naming-conventions.html
 archivesBaseName = "bearwithme"
 
