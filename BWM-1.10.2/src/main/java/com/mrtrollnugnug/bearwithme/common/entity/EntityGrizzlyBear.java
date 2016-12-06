@@ -7,9 +7,9 @@ import net.minecraft.world.World;
 
 public class EntityGrizzlyBear extends EntityPolarBear
 {
-	public EntityGrizzlyBear(World p_i47154_1_)
+	public EntityGrizzlyBear(World worldIn)
 	{
-		super(p_i47154_1_);
+		super(worldIn);
 		this.setSize(1.3F, 1.4F);
 	}
 
