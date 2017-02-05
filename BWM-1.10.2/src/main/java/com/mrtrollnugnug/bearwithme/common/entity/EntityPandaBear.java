@@ -22,8 +22,6 @@ public class EntityPandaBear extends EntityPolarBear
 	@Override
 	public AxisAlignedBB getEntityBoundingBox()
 	{
-		// TODO Auto-generated method stub
-		// System.out.println("get");
 
 		return super.getEntityBoundingBox();//.expand(0, 0, 0.4);
 	}
