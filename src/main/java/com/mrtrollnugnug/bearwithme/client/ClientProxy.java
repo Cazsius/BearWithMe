@@ -1,9 +1,10 @@
-package com.mrtrollnugnug.bearwithme.proxy;
+package com.mrtrollnugnug.bearwithme.client;
 
 import com.mrtrollnugnug.bearwithme.client.model.ModelPandaBear;
 import com.mrtrollnugnug.bearwithme.client.render.RenderBlackBear;
 import com.mrtrollnugnug.bearwithme.client.render.RenderGrizzlyBear;
 import com.mrtrollnugnug.bearwithme.client.render.RenderPandaBear;
+import com.mrtrollnugnug.bearwithme.common.CommonProxy;
 import com.mrtrollnugnug.bearwithme.common.entity.EntityBlackBear;
 import com.mrtrollnugnug.bearwithme.common.entity.EntityGrizzlyBear;
 import com.mrtrollnugnug.bearwithme.common.entity.EntityPandaBear;
