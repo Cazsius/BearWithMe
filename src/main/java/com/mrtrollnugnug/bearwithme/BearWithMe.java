@@ -10,34 +10,33 @@ import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 
 @Mod(modid = BearWithMe.MOD_ID, name = BearWithMe.MOD_NAME)
-public class BearWithMe
-{
+public class BearWithMe {
 
-	public static final String MOD_ID = "bearwithme";
-	public static final String MOD_NAME = "BearWithMe";
+    public static final String MOD_ID = "bearwithme";
 
-	@Mod.Instance("bearwithme")
-	public static BearWithMe instance;
+    public static final String MOD_NAME = "BearWithMe";
 
-	@SidedProxy(clientSide = "com.mrtrollnugnug.bearwithme.proxy.ClientProxy",
-			serverSide = "com.mrtrollnugnug.bearwithme.proxy.CommonProxy")
-	public static CommonProxy proxy;
+    @Mod.Instance("bearwithme")
+    public static BearWithMe instance;
 
-	@EventHandler
-	public void preInit(FMLPreInitializationEvent event)
-	{
-		proxy.preInit();
-	}
+    @SidedProxy(clientSide = "com.mrtrollnugnug.bearwithme.proxy.ClientProxy", serverSide = "com.mrtrollnugnug.bearwithme.proxy.CommonProxy")
+    public static CommonProxy proxy;
 
-	@EventHandler
-	public void init(FMLInitializationEvent event)
-	{
-		proxy.init();
-	}
+    @EventHandler
+    public void preInit (FMLPreInitializationEvent event) {
 
-	@EventHandler
-	public void postInit(FMLPostInitializationEvent event)
-	{
-		proxy.postInit();
-	}
+        proxy.preInit();
+    }
+
+    @EventHandler
+    public void init (FMLInitializationEvent event) {
+
+        proxy.init();
+    }
+
+    @EventHandler
+    public void postInit (FMLPostInitializationEvent event) {
+
+        proxy.postInit();
+    }
 }
