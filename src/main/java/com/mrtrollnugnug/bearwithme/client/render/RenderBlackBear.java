@@ -1,36 +1,33 @@
 package com.mrtrollnugnug.bearwithme.client.render;
 
+import com.mrtrollnugnug.bearwithme.common.entity.EntityBlackBear;
+
 import net.minecraft.client.model.ModelBase;
 import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.client.renderer.entity.RenderLiving;
 import net.minecraft.client.renderer.entity.RenderManager;
-import net.minecraft.entity.EntityLiving;
 import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
 @SideOnly(Side.CLIENT)
-public class RenderBlackBear<B extends EntityLiving> extends RenderLiving<B> {
-    private static final ResourceLocation field_190090_a = new ResourceLocation("bearwithme:textures/entity/black_bear.png");
+public class RenderBlackBear extends RenderLiving<EntityBlackBear> {
 
-    public RenderBlackBear (RenderManager p_i47132_1_, ModelBase p_i47132_2_, float p_i47132_3_) {
-        super(p_i47132_1_, p_i47132_2_, p_i47132_3_);
+    private static final ResourceLocation TEXTURE = new ResourceLocation("bearwithme", "textures/entity/bear_black.png");
+
+    public RenderBlackBear (RenderManager renderer, ModelBase model, float shadowSize) {
+
+        super(renderer, model, shadowSize);
     }
 
     @Override
-    protected ResourceLocation getEntityTexture (B entity) {
+    protected ResourceLocation getEntityTexture (EntityBlackBear entity) {
 
-        return field_190090_a;
+        return TEXTURE;
     }
 
     @Override
-    public void doRender (B entity, double x, double y, double z, float entityYaw, float partialTicks) {
-
-        super.doRender(entity, x, y, z, entityYaw, partialTicks);
-    }
-
-    @Override
-    protected void preRenderCallback (B entitylivingbaseIn, float partialTickTime) {
+    protected void preRenderCallback (EntityBlackBear entitylivingbaseIn, float partialTickTime) {
 
         GlStateManager.scale(1.2F, 1.2F, 1.2F);
         super.preRenderCallback(entitylivingbaseIn, partialTickTime);

@@ -20,9 +20,10 @@ public class ClientProxy extends CommonProxy {
     public void preInit () {
 
         super.preInit();
-        RenderingRegistry.registerEntityRenderingHandler(EntityGrizzlyBear.class, manager -> new RenderGrizzlyBear<>(manager, new ModelPolarBear(), 0.7F));
 
-        RenderingRegistry.registerEntityRenderingHandler(EntityBlackBear.class, manager -> new RenderBlackBear<>(manager, new ModelPolarBear(), 0.7F));
+        RenderingRegistry.registerEntityRenderingHandler(EntityGrizzlyBear.class, manager -> new RenderGrizzlyBear(manager, new ModelPolarBear(), 0.7F));
+
+        RenderingRegistry.registerEntityRenderingHandler(EntityBlackBear.class, manager -> new RenderBlackBear(manager, new ModelPolarBear(), 0.7F));
 
         RenderingRegistry.registerEntityRenderingHandler(EntityPandaBear.class, manager -> new RenderPandaBear(manager, new ModelPandaBear(), 0.7F));
     }
