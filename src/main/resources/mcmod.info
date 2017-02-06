@@ -1,16 +1,14 @@
-[
-{
-  "modid": "grizzlybear",
-  "name": "GrizzlyBear",
-  "description": "A simple mod that adds bear variants to minecraft known as the Grizzly Bear, Black Bear, and Panda Bear!",
-  "version": "${version}",
-  "mcversion": "${mcversion}",
-  "url": "",
-  "updateUrl": "",
-  "authorList": ["MrTrollNugNug","Lewis_McReu"],
-  "credits": "Thutmose, stohun01, wiiv",
-  "logoFile": "",
-  "screenshots": [],
-  "dependencies": []
-}
-]
+[{
+	"modid": "bearwithme",
+	"name": "Bear With Me",
+	"description": "A simple mod that adds bear variants to minecraft known as the Grizzly Bear, Black Bear, and Panda Bear!",
+	"version": "${version}",
+	"mcversion": "${mcversion}",
+	"url": "",
+	"updateUrl": "",
+	"authorList": ["MrTrollNugNug", "Lewis_McReu", "Darkhax"],
+	"credits": "Thutmose, stohun01, wiiv",
+	"logoFile": "",
+	"screenshots": [],
+	"dependencies": []
+}]
