@@ -1,18 +1,15 @@
 package com.mrtrollnugnug.bearwithme.handler;
 
-import com.mrtrollnugnug.bearwithme.item.ItemHideBlackBear;
-import com.mrtrollnugnug.bearwithme.item.ItemHideGrizzlyBear;
-import com.mrtrollnugnug.bearwithme.item.ItemHidePandaBear;
+import com.mrtrollnugnug.bearwithme.item.ItemHide;
 import com.mrtrollnugnug.bearwithme.lib.ModUtils;
 
 import net.minecraft.item.Item;
+import net.minecraftforge.fml.relauncher.Side;
+import net.minecraftforge.fml.relauncher.SideOnly;
 
 public class ContentHandler {
 
-	public static Item itemHideBlackBear;
-	public static Item itemHideGrizzlyBear;
-	public static Item itemHidePandaBear;
-	public static Item itemHidePolarBear;
+	public static Item itemHide;
 	
 	 public static void initBlocks () {
 		 
@@ -20,21 +17,18 @@ public class ContentHandler {
 	
 	public static void initItems () {
 		
-		itemHideBlackBear = new ItemHideBlackBear();
-		ModUtils.registerItem(itemHideBlackBear, "hide_black_bear");
-		
-		itemHideGrizzlyBear = new ItemHideGrizzlyBear();
-		ModUtils.registerItem(itemHideGrizzlyBear, "hide_grizzly_bear");
-		
-		itemHidePandaBear = new ItemHidePandaBear();
-		ModUtils.registerItem(itemHidePandaBear, "hide_panda_bear");
-		
-		itemHidePolarBear = new ItemHidePandaBear();
-		ModUtils.registerItem(itemHidePolarBear, "hide_polar_bear");
+		itemHide = new ItemHide();
+		ModUtils.registerItem(itemHide, "hide_bear");
 	}
 	
 	public static void initRecipes () {
 		
 		
 	}
+	
+	 @SideOnly(Side.CLIENT)
+	    public static void onClientPreInit () {
+
+	        ModUtils.registerItemInvModel(itemHide, "hide", ItemHide.varients);
+	    }
 }

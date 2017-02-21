@@ -4,7 +4,7 @@ entity.bearwithme.blackbear.name=Black Bear
 entity.bearwithme.pandabear.name=Panda Bear
 
 #Items
-item.bearwithme.hide.black.bear.name=Black Bear Hide
-item.bearwithme.hide.grizzly.bear.name=Grizzly Bear Hide
-item.bearwithme.hide.panda.bear.name=Panda Bear Hide
-item.bearwithme.hide.polar.bear.name=Polar Bear Hide
+item.bearwithme.hide.bear.black.name=Black Bear Hide
+item.bearwithme.hide.bear.grizzly.name=Grizzly Bear Hide
+item.bearwithme.hide.bear.panda.name=Panda Bear Hide
+item.bearwithme.hide.bear.polar.name=Polar Bear Hide

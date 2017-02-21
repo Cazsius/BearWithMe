@@ -8,6 +8,7 @@ import com.mrtrollnugnug.bearwithme.common.CommonProxy;
 import com.mrtrollnugnug.bearwithme.common.entity.EntityBlackBear;
 import com.mrtrollnugnug.bearwithme.common.entity.EntityGrizzlyBear;
 import com.mrtrollnugnug.bearwithme.common.entity.EntityPandaBear;
+import com.mrtrollnugnug.bearwithme.handler.ContentHandler;
 
 import net.minecraft.client.model.ModelPolarBear;
 import net.minecraftforge.fml.client.registry.RenderingRegistry;
@@ -20,7 +21,9 @@ public class ClientProxy extends CommonProxy {
     public void preInit () {
 
         super.preInit();
-
+        
+        ContentHandler.onClientPreInit();
+        
         RenderingRegistry.registerEntityRenderingHandler(EntityGrizzlyBear.class, manager -> new RenderGrizzlyBear(manager, new ModelPolarBear(), 0.7F));
 
         RenderingRegistry.registerEntityRenderingHandler(EntityBlackBear.class, manager -> new RenderBlackBear(manager, new ModelPolarBear(), 0.7F));
