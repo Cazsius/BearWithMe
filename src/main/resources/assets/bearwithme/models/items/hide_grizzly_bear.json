@@ -1,0 +1,6 @@
+{
+	"parent": "item/handheld",
+	"textures": {
+		"layer0": "bearwithme:items/hide_grizzly_bear"
+	}
+}

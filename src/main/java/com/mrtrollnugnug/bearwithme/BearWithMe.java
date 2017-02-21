@@ -1,6 +1,7 @@
 package com.mrtrollnugnug.bearwithme;
 
 import com.mrtrollnugnug.bearwithme.common.CommonProxy;
+import com.mrtrollnugnug.bearwithme.handler.ContentHandler;
 import com.mrtrollnugnug.bearwithme.lib.Constants;
 
 import net.minecraftforge.fml.common.Mod;
@@ -22,6 +23,9 @@ public class BearWithMe {
     @EventHandler
     public void preInit (FMLPreInitializationEvent event) {
 
+    	ContentHandler.initBlocks();
+        ContentHandler.initItems();
+        ContentHandler.initRecipes();
         proxy.preInit();
     }
 
