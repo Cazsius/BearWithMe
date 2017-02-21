@@ -27,10 +27,10 @@ public class ContentHandler {
 		ModUtils.registerItem(itemHideGrizzlyBear, "hide_grizzly_bear");
 		
 		itemHidePandaBear = new ItemHidePandaBear();
-		ModUtils.registerItem(itemHidePandaBear, "hide_grizzly_bear");
+		ModUtils.registerItem(itemHidePandaBear, "hide_panda_bear");
 		
 		itemHidePolarBear = new ItemHidePandaBear();
-		ModUtils.registerItem(itemHidePolarBear, "hide_grizzly_bear");
+		ModUtils.registerItem(itemHidePolarBear, "hide_polar_bear");
 	}
 	
 	public static void initRecipes () {

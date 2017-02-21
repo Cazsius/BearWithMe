@@ -2,7 +2,9 @@ package com.mrtrollnugnug.bearwithme.common.entity;
 
 import net.minecraft.entity.EntityAgeable;
 import net.minecraft.entity.SharedMonsterAttributes;
+import net.minecraft.entity.item.EntityItem;
 import net.minecraft.entity.monster.EntityPolarBear;
+import net.minecraft.item.Item;
 import net.minecraft.world.World;
 
 public class EntityBlackBear extends EntityPolarBear {
@@ -10,7 +12,7 @@ public class EntityBlackBear extends EntityPolarBear {
         super(worldIn);
         this.setSize(1.3F, 1.4F);
     }
-
+    
     @Override
     public EntityAgeable createChild (EntityAgeable ageable) {
 
@@ -27,4 +29,11 @@ public class EntityBlackBear extends EntityPolarBear {
         this.getEntityAttribute(SharedMonsterAttributes.ATTACK_DAMAGE).setBaseValue(8.0D);
     }
 
+	
+	@Override
+	public EntityItem dropItem(Item itemIn, int size) {
+		// TODO Auto-generated method stub
+		return super.dropItem(itemIn, size);
+	}
+    
 }

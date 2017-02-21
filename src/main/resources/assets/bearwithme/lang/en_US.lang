@@ -1,3 +1,10 @@
+#Entities
 entity.bearwithme.grizzlybear.name=Grizzly Bear
 entity.bearwithme.blackbear.name=Black Bear
 entity.bearwithme.pandabear.name=Panda Bear
+
+#Items
+item.bearwithme.hide.black.bear.name=Black Bear Hide
+item.bearwithme.hide.grizzly.bear.name=Grizzly Bear Hide
+item.bearwithme.hide.panda.bear.name=Panda Bear Hide
+item.bearwithme.hide.polar.bear.name=Polar Bear Hide
