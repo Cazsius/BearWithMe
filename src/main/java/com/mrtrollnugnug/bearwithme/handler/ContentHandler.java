@@ -29,6 +29,6 @@ public class ContentHandler {
 	 @SideOnly(Side.CLIENT)
 	    public static void onClientPreInit () {
 
-	        ModUtils.registerItemInvModel(itemHide, "hide", ItemHide.varients);
+	        ModUtils.registerItemInvModel(itemHide, "hide_bear", ItemHide.varients);
 	    }
 }
