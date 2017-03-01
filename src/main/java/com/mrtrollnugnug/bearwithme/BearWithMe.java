@@ -4,6 +4,7 @@ import com.mrtrollnugnug.bearwithme.common.CommonProxy;
 import com.mrtrollnugnug.bearwithme.handler.ContentHandler;
 import com.mrtrollnugnug.bearwithme.lib.Constants;
 
+import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.Mod.EventHandler;
 import net.minecraftforge.fml.common.SidedProxy;
@@ -20,9 +21,11 @@ public class BearWithMe {
     @SidedProxy(clientSide = Constants.CLIENT_PROXY_CLASS, serverSide = Constants.SERVER_PROXY_CLASS)
     public static CommonProxy proxy;
 
+    
     @EventHandler
     public void preInit (FMLPreInitializationEvent event) {
-
+    	
+    	MinecraftForge.EVENT_BUS.register(new ContentHandler());
     	ContentHandler.initBlocks();
         ContentHandler.initItems();
         ContentHandler.initRecipes();

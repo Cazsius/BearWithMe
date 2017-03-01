@@ -1,3 +1,6 @@
+#ItemGroups
+itemGroup.BearWithMeTab.name=BearWithMe
+
 #Entities
 entity.bearwithme.grizzlybear.name=Grizzly Bear
 entity.bearwithme.blackbear.name=Black Bear
@@ -8,3 +11,23 @@ item.bearwithme.hide.bear.black.name=Black Bear Hide
 item.bearwithme.hide.bear.grizzly.name=Grizzly Bear Hide
 item.bearwithme.hide.bear.panda.name=Panda Bear Hide
 item.bearwithme.hide.bear.polar.name=Polar Bear Hide
+
+item.bearwithme.polar.bear.head.name=Polar Bear Cowl
+item.bearwithme.polar.bear.chest.name=Polar Bear Suit
+item.bearwithme.polar.bear.legs.name=Polar Bear Pants
+item.bearwithme.polar.bear.boots.name=Polar Bear Boots
+
+item.bearwithme.grizzly.bear.head.name=Grizzly Bear Cowl
+item.bearwithme.grizzly.bear.chest.name=Grizzly Bear Suit
+item.bearwithme.grizzly.bear.legs.name=Grizzly Bear Pants
+item.bearwithme.grizzly.bear.boots.name=Grizzly Bear Boots
+
+item.bearwithme.black.bear.head.name=Black Bear Cowl
+item.bearwithme.black.bear.chest.name=Black Bear Suit
+item.bearwithme.black.bear.legs.name=Black Bear Pants
+item.bearwithme.black.bear.boots.name=Black Bear Boots
+
+item.bearwithme.panda.bear.head.name=Panda Bear Cowl
+item.bearwithme.panda.bear.chest.name=Panda Bear Suit
+item.bearwithme.panda.bear.legs.name=Panda Bear Pants
+item.bearwithme.panda.bear.boots.name=Panda Bear Boots

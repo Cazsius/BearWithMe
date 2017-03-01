@@ -10,7 +10,6 @@ public class ItemHide extends Item {
 
 	public ItemHide() {
 		super();
-		setCreativeTab(CreativeTabs.MATERIALS);
 		 setHasSubtypes(true);		
 	}
 	
