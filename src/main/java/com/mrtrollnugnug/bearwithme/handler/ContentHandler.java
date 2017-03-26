@@ -173,7 +173,7 @@ public class ContentHandler {
 	        ModUtils.registerItemInvModel(itemGrizzlyBearBoots);
 	        ModUtils.registerItemInvModel(itemGrizzlyBearLegs);
 	        ModUtils.registerItemInvModel(itemGrizzlyBearChest);
-	        ModUtils.registerItemInvModel(itemPolarBearBoots);
+	        ModUtils.registerItemInvModel(itemGrizzlyBearHead);
 	        
 	        ModUtils.registerItemInvModel(itemBlackBearBoots);
 	        ModUtils.registerItemInvModel(itemBlackBearLegs);
