@@ -1,5 +1,5 @@
 #ItemGroups
-itemGroup.BearWithMeTab.name=BearWithMe
+itemGroup.BearWithMeTab=BearWithMe
 
 #Entities
 entity.bearwithme.grizzlybear.name=Grizzly Bear

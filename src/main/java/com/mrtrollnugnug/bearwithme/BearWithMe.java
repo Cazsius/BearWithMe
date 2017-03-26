@@ -1,6 +1,7 @@
 package com.mrtrollnugnug.bearwithme;
 
 import com.mrtrollnugnug.bearwithme.common.CommonProxy;
+import com.mrtrollnugnug.bearwithme.handler.ConfigurationHandler;
 import com.mrtrollnugnug.bearwithme.handler.ContentHandler;
 import com.mrtrollnugnug.bearwithme.lib.Constants;
 
@@ -25,6 +26,7 @@ public class BearWithMe {
     @EventHandler
     public void preInit (FMLPreInitializationEvent event) {
     	
+        ConfigurationHandler.initConfig(event.getSuggestedConfigurationFile()); 	
     	MinecraftForge.EVENT_BUS.register(new ContentHandler());
     	ContentHandler.initBlocks();
         ContentHandler.initItems();

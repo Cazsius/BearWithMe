@@ -1,0 +1,6 @@
+{
+  "parent": "item/generated",
+  "textures": {
+    "layer0": "bearwithme:items/panda_bear_legs"
+  }
+}

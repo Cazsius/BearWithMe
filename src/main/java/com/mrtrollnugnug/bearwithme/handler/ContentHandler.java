@@ -9,6 +9,7 @@ import net.minecraft.inventory.EntityEquipmentSlot;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemArmor;
 import net.minecraft.item.ItemArmor.ArmorMaterial;
+import net.minecraft.item.ItemStack;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.world.storage.loot.LootEntryItem;
 import net.minecraft.world.storage.loot.LootPool;
@@ -21,6 +22,7 @@ import net.minecraft.world.storage.loot.functions.SetMetadata;
 import net.minecraftforge.common.util.EnumHelper;
 import net.minecraftforge.event.LootTableLoadEvent;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
+import net.minecraftforge.fml.common.registry.GameRegistry;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
@@ -77,10 +79,10 @@ public class ContentHandler {
 	
 	public static void initItems() {		
 		//Armor Materials
-		ArmorMaterial POLAR_BEAR = EnumHelper.addArmorMaterial("polar_bear", "bearwithme:polar_bear", 5, new int[]{2, 3, 4, 2}, 30, SoundEvents.ITEM_ARMOR_EQUIP_LEATHER, 0.0F);
-		ArmorMaterial GRIZZLY_BEAR = EnumHelper.addArmorMaterial("grizzly_bear", "bearwithme:grizzly_bear", 5, new int[]{2, 3, 4, 2}, 30, SoundEvents.ITEM_ARMOR_EQUIP_LEATHER, 0.0F);
-		ArmorMaterial BLACK_BEAR = EnumHelper.addArmorMaterial("black_bear", "bearwithme:black_bear", 5, new int[]{2, 3, 4, 2}, 30, SoundEvents.ITEM_ARMOR_EQUIP_LEATHER, 0.0F);
-		ArmorMaterial PANDA_BEAR = EnumHelper.addArmorMaterial("panda_bear", "bearwithme:panda_bear", 5, new int[]{2, 3, 4, 2}, 30, SoundEvents.ITEM_ARMOR_EQUIP_LEATHER, 0.0F);
+		ArmorMaterial POLAR_BEAR = EnumHelper.addArmorMaterial("polar_bear", "bearwithme:polar_bear", 5, new int[]{3, 4, 5, 3}, 30, SoundEvents.ITEM_ARMOR_EQUIP_LEATHER, 0.0F);
+		ArmorMaterial GRIZZLY_BEAR = EnumHelper.addArmorMaterial("grizzly_bear", "bearwithme:grizzly_bear", 5, new int[]{3, 4, 6, 3}, 30, SoundEvents.ITEM_ARMOR_EQUIP_LEATHER, 0.0F);
+		ArmorMaterial BLACK_BEAR = EnumHelper.addArmorMaterial("black_bear", "bearwithme:black_bear", 5, new int[]{3, 4, 5, 2}, 30, SoundEvents.ITEM_ARMOR_EQUIP_LEATHER, 0.0F);
+		ArmorMaterial PANDA_BEAR = EnumHelper.addArmorMaterial("panda_bear", "bearwithme:panda_bear", 5, new int[]{2, 2, 3, 1}, 30, SoundEvents.ITEM_ARMOR_EQUIP_LEATHER, 0.0F);
 		
 		//Generic Items
 		itemHide = new ItemHide();
@@ -129,7 +131,33 @@ public class ContentHandler {
 	}
 	
 	public static void initRecipes () {
+		GameRegistry.addRecipe(new ItemStack(itemBlackBearBoots), new Object[] {"   ", "b b", "b b", 'b', new ItemStack(ContentHandler.itemHide, 1, 0)});
+		GameRegistry.addRecipe(new ItemStack(itemBlackBearBoots), new Object[] {"b b", "b b", "   ", 'b', new ItemStack(ContentHandler.itemHide, 1, 0)});
+		GameRegistry.addRecipe(new ItemStack(itemBlackBearLegs), new Object[] {"bbb", "b b", "b b", 'b', new ItemStack(ContentHandler.itemHide, 1, 0)});
+		GameRegistry.addRecipe(new ItemStack(itemBlackBearChest), new Object[] {"b b", "bbb", "bbb", 'b', new ItemStack(ContentHandler.itemHide, 1, 0)});
+		GameRegistry.addRecipe(new ItemStack(itemBlackBearHead), new Object[] {"bbb", "b b", "   ", 'b', new ItemStack(ContentHandler.itemHide, 1, 0)});
+		GameRegistry.addRecipe(new ItemStack(itemBlackBearHead), new Object[] {"   ", "bbb", "b b", 'b', new ItemStack(ContentHandler.itemHide, 1, 0)});
 		
+		GameRegistry.addRecipe(new ItemStack(itemGrizzlyBearBoots), new Object[] {"   ", "g g", "g g", 'g', new ItemStack(ContentHandler.itemHide, 1, 1)});
+		GameRegistry.addRecipe(new ItemStack(itemGrizzlyBearBoots), new Object[] {"g g", "g g", "   ", 'g', new ItemStack(ContentHandler.itemHide, 1, 1)});
+		GameRegistry.addRecipe(new ItemStack(itemGrizzlyBearLegs), new Object[] {"ggg", "g g", "g g", 'g', new ItemStack(ContentHandler.itemHide, 1, 1)});
+		GameRegistry.addRecipe(new ItemStack(itemGrizzlyBearChest), new Object[] {"g g", "ggg", "ggg", 'g', new ItemStack(ContentHandler.itemHide, 1, 1)});
+		GameRegistry.addRecipe(new ItemStack(itemGrizzlyBearHead), new Object[] {"ggg", "g g", "   ", 'g', new ItemStack(ContentHandler.itemHide, 1, 1)});
+		GameRegistry.addRecipe(new ItemStack(itemGrizzlyBearHead), new Object[] {"   ", "ggg", "g g", 'g', new ItemStack(ContentHandler.itemHide, 1, 1)});
+		
+		GameRegistry.addRecipe(new ItemStack(itemPandaBearBoots), new Object[] {"   ", "p p", "p p", 'p', new ItemStack(ContentHandler.itemHide, 1, 2)});
+		GameRegistry.addRecipe(new ItemStack(itemPandaBearBoots), new Object[] {"p p", "p p", "   ", 'p', new ItemStack(ContentHandler.itemHide, 1, 2)});
+		GameRegistry.addRecipe(new ItemStack(itemPandaBearLegs), new Object[] {"ppp", "p p", "p p", 'p', new ItemStack(ContentHandler.itemHide, 1, 2)});
+		GameRegistry.addRecipe(new ItemStack(itemPandaBearChest), new Object[] {"p p", "ppp", "ppp", 'p', new ItemStack(ContentHandler.itemHide, 1, 2)});
+		GameRegistry.addRecipe(new ItemStack(itemPandaBearHead), new Object[] {"ppp", "p p", "   ", 'p', new ItemStack(ContentHandler.itemHide, 1, 2)});
+		GameRegistry.addRecipe(new ItemStack(itemPandaBearHead), new Object[] {"   ", "ppp", "p p", 'p', new ItemStack(ContentHandler.itemHide, 1, 2)});
+		
+		GameRegistry.addRecipe(new ItemStack(itemPolarBearBoots), new Object[] {"   ", "p p", "p p", 'p', new ItemStack(ContentHandler.itemHide, 1, 3)});
+		GameRegistry.addRecipe(new ItemStack(itemPolarBearBoots), new Object[] {"p p", "p p", "   ", 'p', new ItemStack(ContentHandler.itemHide, 1, 3)});
+		GameRegistry.addRecipe(new ItemStack(itemPolarBearLegs), new Object[] {"ppp", "p p", "p p", 'p', new ItemStack(ContentHandler.itemHide, 1, 3)});
+		GameRegistry.addRecipe(new ItemStack(itemPolarBearChest), new Object[] {"p p", "ppp", "ppp", 'p', new ItemStack(ContentHandler.itemHide, 1, 3)});
+		GameRegistry.addRecipe(new ItemStack(itemPolarBearHead), new Object[] {"ppp", "p p", "   ", 'p', new ItemStack(ContentHandler.itemHide, 1, 3)});
+		GameRegistry.addRecipe(new ItemStack(itemPolarBearHead), new Object[] {"   ", "ppp", "p p", 'p', new ItemStack(ContentHandler.itemHide, 1, 3)});
 		
 	}
 	
