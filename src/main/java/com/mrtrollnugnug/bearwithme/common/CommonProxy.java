@@ -34,7 +34,7 @@ public class CommonProxy {
 
         EntityRegistry.registerModEntity(EntityPandaBear.class, "pandabear", 3, BearWithMe.instance, 80, 3, true, white, black);
         EntityRegistry.addSpawn(EntityPandaBear.class, 1, ConfigurationHandler.getSpawnRatePanda(), 1, EnumCreatureType.CREATURE, this.getBiomesForTypes(Type.JUNGLE));
-    }
+    }	
 
     public void init () {
 

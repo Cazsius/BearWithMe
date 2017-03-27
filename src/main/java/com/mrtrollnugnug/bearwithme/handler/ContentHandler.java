@@ -1,6 +1,7 @@
 package com.mrtrollnugnug.bearwithme.handler;
 
 import com.mrtrollnugnug.bearwithme.item.ItemHide;
+import com.mrtrollnugnug.bearwithme.item.ItemModArmor;
 import com.mrtrollnugnug.bearwithme.lib.ModUtils;
 
 import net.minecraft.creativetab.CreativeTabs;
@@ -73,6 +74,7 @@ public class ContentHandler {
 	         }
 	     }
 	  }
+	 
 	
 	 public static void initBlocks () {	
 	 }
@@ -101,7 +103,8 @@ public class ContentHandler {
 		
 		itemGrizzlyBearBoots = new ItemArmor(GRIZZLY_BEAR, 0, EntityEquipmentSlot.FEET);
 		itemGrizzlyBearLegs = new ItemArmor(GRIZZLY_BEAR, 0, EntityEquipmentSlot.LEGS);	
-		itemGrizzlyBearChest = new ItemArmor(GRIZZLY_BEAR, 0, EntityEquipmentSlot.CHEST);
+		//TODO Testing
+		itemGrizzlyBearChest = new ItemModArmor(GRIZZLY_BEAR, 0, EntityEquipmentSlot.CHEST);
 		itemGrizzlyBearHead = new ItemArmor(GRIZZLY_BEAR, 0, EntityEquipmentSlot.HEAD);
 		
 		ModUtils.registerItem(itemGrizzlyBearBoots, "grizzly_bear_boots");
@@ -129,7 +132,7 @@ public class ContentHandler {
 		ModUtils.registerItem(itemPandaBearChest, "panda_bear_chest");
 		ModUtils.registerItem(itemPandaBearHead, "panda_bear_head");	
 	}
-	
+
 	public static void initRecipes () {
 		GameRegistry.addRecipe(new ItemStack(itemBlackBearBoots), new Object[] {"   ", "b b", "b b", 'b', new ItemStack(ContentHandler.itemHide, 1, 0)});
 		GameRegistry.addRecipe(new ItemStack(itemBlackBearBoots), new Object[] {"b b", "b b", "   ", 'b', new ItemStack(ContentHandler.itemHide, 1, 0)});
