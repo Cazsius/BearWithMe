@@ -1,6 +1,6 @@
 package com.mrtrollnugnug.bearwithme.client.render;
 
-import com.mrtrollnugnug.bearwithme.client.model.ModelPandaBear;
+import com.mrtrollnugnug.bearwithme.client.model.entity.ModelPandaBear;
 import com.mrtrollnugnug.bearwithme.common.entity.EntityPandaBear;
 
 import net.minecraft.client.renderer.GlStateManager;

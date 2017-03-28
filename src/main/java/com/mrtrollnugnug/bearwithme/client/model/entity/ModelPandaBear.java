@@ -1,4 +1,4 @@
-package com.mrtrollnugnug.bearwithme.client.model;
+package com.mrtrollnugnug.bearwithme.client.model.entity;
 
 import org.lwjgl.opengl.GL11;
 

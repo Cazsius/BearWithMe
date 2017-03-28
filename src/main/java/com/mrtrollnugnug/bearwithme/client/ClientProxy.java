@@ -1,6 +1,6 @@
 package com.mrtrollnugnug.bearwithme.client;
 
-import com.mrtrollnugnug.bearwithme.client.model.ModelPandaBear;
+import com.mrtrollnugnug.bearwithme.client.model.entity.ModelPandaBear;
 import com.mrtrollnugnug.bearwithme.client.render.RenderBlackBear;
 import com.mrtrollnugnug.bearwithme.client.render.RenderGrizzlyBear;
 import com.mrtrollnugnug.bearwithme.client.render.RenderPandaBear;
