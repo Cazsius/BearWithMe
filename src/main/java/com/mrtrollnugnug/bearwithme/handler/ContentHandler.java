@@ -1,7 +1,8 @@
-package com.mrtrollnugnug.bearwithme.handler;
+	package com.mrtrollnugnug.bearwithme.handler;
 
 import com.mrtrollnugnug.bearwithme.item.ItemHide;
-import com.mrtrollnugnug.bearwithme.item.ItemModArmor;
+import com.mrtrollnugnug.bearwithme.item.ItemGrizzlyChestArmor;
+import com.mrtrollnugnug.bearwithme.item.ItemGrizzlyCowlArmor;
 import com.mrtrollnugnug.bearwithme.lib.ModUtils;
 
 import net.minecraft.creativetab.CreativeTabs;
@@ -104,8 +105,8 @@ public class ContentHandler {
 		itemGrizzlyBearBoots = new ItemArmor(GRIZZLY_BEAR, 0, EntityEquipmentSlot.FEET);
 		itemGrizzlyBearLegs = new ItemArmor(GRIZZLY_BEAR, 0, EntityEquipmentSlot.LEGS);	
 		//TODO Testing
-		itemGrizzlyBearChest = new ItemModArmor(GRIZZLY_BEAR, 0, EntityEquipmentSlot.CHEST);
-		itemGrizzlyBearHead = new ItemArmor(GRIZZLY_BEAR, 0, EntityEquipmentSlot.HEAD);
+		itemGrizzlyBearChest = new ItemGrizzlyChestArmor(GRIZZLY_BEAR, 0, EntityEquipmentSlot.CHEST);
+		itemGrizzlyBearHead = new ItemGrizzlyCowlArmor(GRIZZLY_BEAR, 0, EntityEquipmentSlot.HEAD);
 		
 		ModUtils.registerItem(itemGrizzlyBearBoots, "grizzly_bear_boots");
 		ModUtils.registerItem(itemGrizzlyBearLegs, "grizzly_bear_legs");

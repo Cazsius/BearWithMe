@@ -2,14 +2,14 @@ package com.mrtrollnugnug.bearwithme.client.model;
 
 import org.lwjgl.opengl.GL11;
 
-import net.minecraft.client.model.ModelBase;
+import net.minecraft.client.model.ModelBiped;
 import net.minecraft.client.model.ModelRenderer;
 import net.minecraft.entity.Entity;
 
 /**
  * bearPanda - wiiv Created using Tabula 4.1.1
  */
-public class ModelPandaBear extends ModelBase {
+public class ModelPandaBear extends ModelBiped {
 
     public ModelRenderer body1;
 
