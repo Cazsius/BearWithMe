@@ -9,7 +9,7 @@ import net.minecraft.entity.Entity;
  * Zombie - Unknown
  * Created using Tabula 5.1.0
  */
-public class ModelGrizzlyChest extends ModelBiped {
+public class ModelBearChest extends ModelBiped {
     public ModelRenderer lghk222;
     public ModelRenderer lghk22;
     public ModelRenderer field_78115_e254;
@@ -79,7 +79,7 @@ public class ModelGrizzlyChest extends ModelBiped {
     public ModelRenderer CubeName232;
     public ModelRenderer CubeName2222;
 
-    public ModelGrizzlyChest() {
+    public ModelBearChest() {
         this.textureWidth = 64;
         this.textureHeight = 64;
         this.CubeName3 = new ModelRenderer(this, 1, 9);

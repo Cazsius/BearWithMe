@@ -9,11 +9,11 @@ import net.minecraft.inventory.EntityEquipmentSlot;
 import net.minecraft.item.ItemArmor;
 import net.minecraft.item.ItemStack;
 
-public class ItemGrizzlyCowlArmor extends ItemArmor {
+public class ItemBlackCowlArmor extends ItemArmor {
 	
-	public static final String GRIZZLY_HEAD = "bearwithme:textures/models/armor/grizzly_bear_head.png";
+	public static final String BLACK_HEAD = "bearwithme:textures/models/armor/black_bear_head.png";
 
-	public ItemGrizzlyCowlArmor(ArmorMaterial materialIn, int renderIndexIn, EntityEquipmentSlot equipmentSlotIn) {
+	public ItemBlackCowlArmor(ArmorMaterial materialIn, int renderIndexIn, EntityEquipmentSlot equipmentSlotIn) {
 		super(materialIn, renderIndexIn, equipmentSlotIn);
 	}
 	
@@ -25,7 +25,7 @@ public class ItemGrizzlyCowlArmor extends ItemArmor {
 	
 	@Override
 	public String getArmorTexture(ItemStack stack, Entity entity, EntityEquipmentSlot slot, String type) {
-		return GRIZZLY_HEAD;		
+		return BLACK_HEAD;		
 	}
 	
 }

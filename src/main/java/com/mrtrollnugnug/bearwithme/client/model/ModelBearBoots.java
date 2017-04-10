@@ -8,7 +8,7 @@ import net.minecraft.entity.Entity;
  * Zombie - Unknown
  * Created using Tabula 5.1.0
  */
-public class ModelGrizzlyBoots extends ModelBiped {
+public class ModelBearBoots extends ModelBiped {
     public ModelRenderer field_178721_j222;
     public ModelRenderer field_178721_j2222;
     public ModelRenderer field_178721_j62;
@@ -36,7 +36,7 @@ public class ModelGrizzlyBoots extends ModelBiped {
     public ModelRenderer CubeName23;
     public ModelRenderer CubeName222;
 
-    public ModelGrizzlyBoots() {
+    public ModelBearBoots() {
         this.textureWidth = 32;
         this.textureHeight = 32;
         this.CubeName23 = new ModelRenderer(this, 0, 12);

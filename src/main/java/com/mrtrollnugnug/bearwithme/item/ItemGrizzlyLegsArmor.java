@@ -1,6 +1,6 @@
 package com.mrtrollnugnug.bearwithme.item;
 
-import com.mrtrollnugnug.bearwithme.client.model.ModelGrizzlyLegs;
+import com.mrtrollnugnug.bearwithme.client.model.ModelBearLegs;
 
 import net.minecraft.client.model.ModelBiped;
 import net.minecraft.entity.Entity;
@@ -20,7 +20,7 @@ public class ItemGrizzlyLegsArmor extends ItemArmor {
 	@Override
 	public ModelBiped getArmorModel(EntityLivingBase entityLiving, ItemStack itemStack, EntityEquipmentSlot armorSlot,
 			ModelBiped _default) {
-		return new ModelGrizzlyLegs();
+		return new ModelBearLegs();
 	}
 	
 	@Override

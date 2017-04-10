@@ -1,6 +1,6 @@
 package com.mrtrollnugnug.bearwithme.item;
 
-import com.mrtrollnugnug.bearwithme.client.model.ModelBearHead;
+import com.mrtrollnugnug.bearwithme.client.model.ModelBearLegs;
 
 import net.minecraft.client.model.ModelBiped;
 import net.minecraft.entity.Entity;
@@ -9,23 +9,23 @@ import net.minecraft.inventory.EntityEquipmentSlot;
 import net.minecraft.item.ItemArmor;
 import net.minecraft.item.ItemStack;
 
-public class ItemGrizzlyCowlArmor extends ItemArmor {
-	
-	public static final String GRIZZLY_HEAD = "bearwithme:textures/models/armor/grizzly_bear_head.png";
+public class ItemBlackLegsArmor extends ItemArmor {
 
-	public ItemGrizzlyCowlArmor(ArmorMaterial materialIn, int renderIndexIn, EntityEquipmentSlot equipmentSlotIn) {
+	public static final String BLACK_BOOTS = "bearwithme:textures/models/armor/black_bear_boots_legs.png";
+	
+	public ItemBlackLegsArmor(ArmorMaterial materialIn, int renderIndexIn, EntityEquipmentSlot equipmentSlotIn) {
 		super(materialIn, renderIndexIn, equipmentSlotIn);
 	}
 	
 	@Override
 	public ModelBiped getArmorModel(EntityLivingBase entityLiving, ItemStack itemStack, EntityEquipmentSlot armorSlot,
 			ModelBiped _default) {
-		return new ModelBearHead();
+		return new ModelBearLegs();
 	}
 	
 	@Override
 	public String getArmorTexture(ItemStack stack, Entity entity, EntityEquipmentSlot slot, String type) {
-		return GRIZZLY_HEAD;		
+		return BLACK_BOOTS;
+		
 	}
-	
 }

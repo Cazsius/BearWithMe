@@ -8,7 +8,7 @@ import net.minecraft.entity.Entity;
  * Polar Bear - Unknown
  * Created using Tabula 5.1.0
  */
-public class ModelGrizzlyHead extends ModelBiped {
+public class ModelBearHead extends ModelBiped {
     public ModelRenderer field_78150_a;
     public ModelRenderer kdakf;
     public ModelRenderer kdakf2;
@@ -30,7 +30,7 @@ public class ModelGrizzlyHead extends ModelBiped {
     public ModelRenderer teeth2;
     public ModelRenderer teeth22;
 
-    public ModelGrizzlyHead() {
+    public ModelBearHead() {
         this.textureWidth = 64;
         this.textureHeight = 64;
         this.kdakf232 = new ModelRenderer(this, 30, 30);

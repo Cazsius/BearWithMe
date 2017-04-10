@@ -1,5 +1,9 @@
 	package com.mrtrollnugnug.bearwithme.handler;
 
+import com.mrtrollnugnug.bearwithme.item.ItemBlackBootsArmor;
+import com.mrtrollnugnug.bearwithme.item.ItemBlackChestArmor;
+import com.mrtrollnugnug.bearwithme.item.ItemBlackCowlArmor;
+import com.mrtrollnugnug.bearwithme.item.ItemBlackLegsArmor;
 import com.mrtrollnugnug.bearwithme.item.ItemGrizzlyBootsArmor;
 import com.mrtrollnugnug.bearwithme.item.ItemGrizzlyChestArmor;
 import com.mrtrollnugnug.bearwithme.item.ItemGrizzlyCowlArmor;
@@ -115,10 +119,10 @@ public class ContentHandler {
 		ModUtils.registerItem(itemGrizzlyBearChest, "grizzly_bear_chest");
 		ModUtils.registerItem(itemGrizzlyBearHead, "grizzly_bear_head");		
 		
-		itemBlackBearBoots = new ItemArmor(BLACK_BEAR, 0, EntityEquipmentSlot.FEET);
-		itemBlackBearLegs = new ItemArmor(BLACK_BEAR, 0, EntityEquipmentSlot.LEGS);
-		itemBlackBearChest = new ItemArmor(BLACK_BEAR, 0, EntityEquipmentSlot.CHEST);
-		itemBlackBearHead = new ItemArmor(BLACK_BEAR, 0, EntityEquipmentSlot.HEAD);
+		itemBlackBearBoots = new ItemBlackBootsArmor(BLACK_BEAR, 0, EntityEquipmentSlot.FEET);
+		itemBlackBearLegs = new ItemBlackLegsArmor(BLACK_BEAR, 0, EntityEquipmentSlot.LEGS);
+		itemBlackBearChest = new ItemBlackChestArmor(BLACK_BEAR, 0, EntityEquipmentSlot.CHEST);
+		itemBlackBearHead = new ItemBlackCowlArmor(BLACK_BEAR, 0, EntityEquipmentSlot.HEAD);
 		
 		ModUtils.registerItem(itemBlackBearBoots, "black_bear_boots");
 		ModUtils.registerItem(itemBlackBearLegs, "black_bear_legs");
