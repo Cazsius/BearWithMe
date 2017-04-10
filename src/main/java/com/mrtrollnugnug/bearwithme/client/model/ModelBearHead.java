@@ -1,15 +1,14 @@
 package com.mrtrollnugnug.bearwithme.client.model;
 
-import net.minecraft.client.model.ModelBiped;
 import net.minecraft.client.model.ModelRenderer;
-import net.minecraft.entity.Entity;
 
 /**
  * Polar Bear - Unknown
  * Created using Tabula 5.1.0
  */
-public class ModelBearHead extends ModelBiped {
-    public ModelRenderer field_78150_a;
+public class ModelBearHead extends ModelArmorExtended {
+
+    public ModelRenderer actualHead;
     public ModelRenderer kdakf;
     public ModelRenderer kdakf2;
     public ModelRenderer kdakf22;
@@ -29,8 +28,9 @@ public class ModelBearHead extends ModelBiped {
     public ModelRenderer field_78150_a_1;
     public ModelRenderer teeth2;
     public ModelRenderer teeth22;
-
+    
     public ModelBearHead() {
+        
         this.textureWidth = 64;
         this.textureHeight = 64;
         this.kdakf232 = new ModelRenderer(this, 30, 30);
@@ -42,10 +42,10 @@ public class ModelBearHead extends ModelBiped {
         this.field_78150_a_1 = new ModelRenderer(this, 1, 27);
         this.field_78150_a_1.setRotationPoint(0.0F, -3.0F, -4.0F);
         this.field_78150_a_1.addBox(-2.5F, 1.0F, -6.0F, 5, 2, 3, 0.0F);
-        this.field_78150_a = new ModelRenderer(this, 6, 33);
-        this.field_78150_a.setRotationPoint(0.0F, -4.900000095367432F, 0.5F);
-        this.field_78150_a.addBox(-3.5F, -5.0F, -7.0F, 7, 5, 7, 0.0F);
-        this.setRotateAngle(field_78150_a, -0.3490658503988659F, 0.0F, 0.0F);
+        this.actualHead = new ModelRenderer(this, 6, 33);
+        this.actualHead.setRotationPoint(0.0F, -4.900000095367432F, 0.5F);
+        this.actualHead.addBox(-3.5F, -5.0F, -7.0F, 7, 5, 7, 0.0F);
+        this.setRotateAngle(actualHead, -0.3490658503988659F, 0.0F, 0.0F);
         this.kdakf2 = new ModelRenderer(this, 37, 5);
         this.kdakf2.setRotationPoint(3.5F, -8.199999809265137F, 1.5F);
         this.kdakf2.addBox(0.0F, 0.0F, 0.0F, 1, 8, 2, 0.0F);
@@ -102,38 +102,19 @@ public class ModelBearHead extends ModelBiped {
         this.kdakf2322 = new ModelRenderer(this, 30, 30);
         this.kdakf2322.setRotationPoint(-4.300000190734863F, -8.100000381469727F, 3.4000000953674316F);
         this.kdakf2322.addBox(0.0F, 0.0F, 0.0F, 2, 8, 1, 0.0F);
-        this.field_78150_a.addChild(this.teeth3);
-        this.field_78150_a.addChild(this.field_78150_a_1);
-        this.field_78150_a.addChild(this.field_78150_a_3);
-        this.field_78150_a.addChild(this.teeth);
-        this.field_78150_a.addChild(this.field_78150_a_2);
+        this.actualHead.addChild(this.teeth3);
+        this.actualHead.addChild(this.field_78150_a_1);
+        this.actualHead.addChild(this.field_78150_a_3);
+        this.actualHead.addChild(this.teeth);
+        this.actualHead.addChild(this.field_78150_a_2);
         this.teeth.addChild(this.teeth2);
         this.teeth3.addChild(this.teeth22);
     }
-
+    
     @Override
-    public void render(Entity entity, float f, float f1, float f2, float f3, float f4, float f5) { 
-        this.kdakf232.render(f5);
-        this.field_78150_a.render(f5);
-        this.kdakf2.render(f5);
-        this.kdakf223.render(f5);
-        this.CubeName.render(f5);
-        this.CubeN.render(f5);
-        this.kdakf222.render(f5);
-        this.CubeN2.render(f5);
-        this.CubeN3.render(f5);
-        this.kdakf22.render(f5);
-        this.kdakf.render(f5);
-        this.kdakf23.render(f5);
-        this.kdakf2322.render(f5);
-    }
-
-    /**
-     * This is a helper function from Tabula to set the rotation of model parts
-     */
-    public void setRotateAngle(ModelRenderer modelRenderer, float x, float y, float z) {
-        modelRenderer.rotateAngleX = x;
-        modelRenderer.rotateAngleY = y;
-        modelRenderer.rotateAngleZ = z;
+    public void addModelParts () {
+        
+        this.bipedHead.showModel = false;
+        this.bipedHeadwear = this.actualHead;
     }
 }
