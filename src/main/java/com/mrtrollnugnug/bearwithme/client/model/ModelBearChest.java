@@ -393,7 +393,8 @@ public class ModelBearChest extends ModelArmorExtended {
 
 	@Override
 	public void addModelParts() {
-        this.bipedHead.showModel = false;
-        this.bipedHeadwear = this.MidNecklacePieceWHOLE;
+        this.bipedBody = this.Front;
+        this.bipedLeftArm = this.LeftWristWHOLE;
+        this.bipedRightArm = this.RightWristWHOLE;
 	}
 }
