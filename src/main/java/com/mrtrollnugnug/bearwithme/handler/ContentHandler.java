@@ -66,8 +66,8 @@ public class ContentHandler {
 
 	public static final CreativeTabs BearWithMe = new CreativeTabs("BearWithMeTab")
 	{
-	   		public Item getTabIconItem() {
-	   			return ContentHandler.itemHide;
+	   		public ItemStack getTabIconItem() {
+	   			return new ItemStack(itemHide);
 	   		}
 	 };
 	 

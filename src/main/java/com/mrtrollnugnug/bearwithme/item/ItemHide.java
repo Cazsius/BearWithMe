@@ -1,10 +1,9 @@
 package com.mrtrollnugnug.bearwithme.item;
 
-import java.util.List;
-
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
+import net.minecraft.util.NonNullList;
 
 public class ItemHide extends Item {
 
@@ -22,9 +21,9 @@ public class ItemHide extends Item {
     }
 	
 	@Override
-	 public void getSubItems (Item itemIn, CreativeTabs tab, List<ItemStack> subItems) {
-
-        for (int meta = 0; meta < varients.length; meta++) {
+	public void getSubItems(Item itemIn, CreativeTabs tab, NonNullList<ItemStack> subItems)
+    {
+		for (int meta = 0; meta < varients.length; meta++) {
             subItems.add(new ItemStack(this, 1, meta));
         }
     }
