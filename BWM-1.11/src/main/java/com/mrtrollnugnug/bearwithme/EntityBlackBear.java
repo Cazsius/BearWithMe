@@ -14,7 +14,7 @@ public class EntityBlackBear extends EntityPolarBear
 	}
 	public EntityAgeable createChild(EntityAgeable ageable)
 	{
-		return new EntityBlackBear(this.worldObj);
+		return new EntityBlackBear(this.world);
 	}
     protected void applyEntityAttributes()
     {
