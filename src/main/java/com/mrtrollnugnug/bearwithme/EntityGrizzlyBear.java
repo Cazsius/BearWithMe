@@ -5,19 +5,16 @@ import net.minecraft.entity.SharedMonsterAttributes;
 import net.minecraft.entity.monster.EntityPolarBear;
 import net.minecraft.world.World;
 
-public class EntityGrizzlyBear extends EntityPolarBear
-{
-    public EntityGrizzlyBear(World p_i47154_1_)
-    {
+public class EntityGrizzlyBear extends EntityPolarBear {
+    public EntityGrizzlyBear(World p_i47154_1_) {
         super(p_i47154_1_);
         this.setSize(1.3F, 1.4F);
     }
-    public EntityAgeable createChild(EntityAgeable ageable)
-    {
+    public EntityAgeable createChild(EntityAgeable ageable) {
         return new EntityGrizzlyBear(this.world);
     }
-    protected void applyEntityAttributes()
-    {
+    
+    protected void applyEntityAttributes() {
         super.applyEntityAttributes();
         this.getEntityAttribute(SharedMonsterAttributes.MAX_HEALTH).setBaseValue(40.0D);
         this.getEntityAttribute(SharedMonsterAttributes.FOLLOW_RANGE).setBaseValue(25.0D);

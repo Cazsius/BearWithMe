@@ -3,7 +3,6 @@ package com.mrtrollnugnug.bearwithme;
 import java.awt.Color;
 import java.util.ArrayList;
 import java.util.Collection;
-import java.util.Collections;
 
 import net.minecraft.entity.EnumCreatureType;
 import net.minecraft.util.ResourceLocation;
@@ -13,11 +12,9 @@ import net.minecraftforge.common.BiomeDictionary.Type;
 import net.minecraftforge.fml.common.registry.EntityRegistry;
 
 public class CommonProxy {
-
-	public void preInit() 
-	{
-
-	}
+	
+	public  void preInit() {}
+	
 	public void init() {
 		Collection<Biome> gList = new ArrayList<>();
 		gList.addAll(BiomeDictionary.getBiomes(Type.PLAINS));
@@ -46,10 +43,4 @@ public class CommonProxy {
 		
 		
 	}
-
-	public void postInit() 
-	{
-
-	}
-
 }
