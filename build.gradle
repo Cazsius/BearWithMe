@@ -22,7 +22,7 @@ compileJava {
 }
 
 minecraft {
-    version = "1.11.2 - 13.20.1.2386"
+    version = "1.11.2-13.20.1.2386"
     runDir = "run"
     mappings = "stable_32"
     makeObfSourceJar = false // an Srg named sources jar is made by default. uncomment this to disable.
