@@ -20,9 +20,9 @@ public class CommonProxy {
 	}
 	public void init() {
 		Collection<Biome> gList = new ArrayList<>();
-		Collections.addAll(gList, BiomeDictionary.getBiomesForType(Type.PLAINS));
-		Collections.addAll(gList, BiomeDictionary.getBiomesForType(Type.FOREST));
-		Collections.addAll(gList, BiomeDictionary.getBiomesForType(Type.HILLS));
+		gList.addAll(BiomeDictionary.getBiomes(Type.PLAINS));
+		gList.addAll(BiomeDictionary.getBiomes(Type.FOREST));
+		gList.addAll(BiomeDictionary.getBiomes(Type.HILLS));
 		EntityRegistry.registerModEntity(new ResourceLocation(BearWithMe.MOD_ID, "entity/new_grizzly_bear"), EntityGrizzlyBear.class, "grizzlybear", 1, BearWithMe.instance, 80, 3, true, new Color(255, 255, 255).getRGB(),
 				new Color(119, 84, 57).getRGB());
 		EntityRegistry.addSpawn(EntityGrizzlyBear.class, 2, 1, 1, EnumCreatureType.MONSTER,
@@ -30,10 +30,10 @@ public class CommonProxy {
 		
 		
 		Collection<Biome> bList = new ArrayList<>();
-		Collections.addAll(bList, BiomeDictionary.getBiomesForType(Type.CONIFEROUS));
-		Collections.addAll(bList, BiomeDictionary.getBiomesForType(Type.MESA));
-		Collections.addAll(bList, BiomeDictionary.getBiomesForType(Type.SAVANNA));
-		Collections.addAll(bList, BiomeDictionary.getBiomesForType(Type.SPOOKY));
+		bList.addAll(BiomeDictionary.getBiomes(Type.CONIFEROUS));
+		bList.addAll(BiomeDictionary.getBiomes(Type.MESA));
+		bList.addAll(BiomeDictionary.getBiomes(Type.SAVANNA));
+		bList.addAll(BiomeDictionary.getBiomes(Type.SPOOKY));
 		
 		EntityRegistry.registerModEntity(new ResourceLocation(BearWithMe.MOD_ID, "entity/black_bear"), EntityBlackBear.class, "blackbear", 2,
 				BearWithMe.instance, 80, 3, true, new Color(255, 255, 255).getRGB(),

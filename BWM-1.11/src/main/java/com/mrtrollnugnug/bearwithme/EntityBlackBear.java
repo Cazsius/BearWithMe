@@ -7,14 +7,14 @@ import net.minecraft.world.World;
 
 public class EntityBlackBear extends EntityPolarBear
 {
-	public EntityBlackBear(World p_i47154_1_) 
+	public EntityBlackBear(World p_i47154_1_)
 	{
 		super(p_i47154_1_);
 		this.setSize(1.3F, 1.4F);
 	}
 	public EntityAgeable createChild(EntityAgeable ageable)
 	{
-		return new EntityBlackBear(this.worldObj);
+		return new EntityBlackBear(this.world);
 	}
     protected void applyEntityAttributes()
     {
