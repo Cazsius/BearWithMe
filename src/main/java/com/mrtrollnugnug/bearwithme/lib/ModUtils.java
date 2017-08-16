@@ -10,6 +10,8 @@ import net.minecraft.client.renderer.block.model.ModelResourceLocation;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemBlock;
 import net.minecraftforge.client.model.ModelLoader;
+import net.minecraftforge.event.RegistryEvent;
+import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 import net.minecraftforge.fml.common.registry.GameRegistry;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
@@ -49,7 +51,6 @@ public class ModUtils {
      * @param item The item to register.
      * @param ID The ID to register the item with.
      */
-  
     public static Item registerItem (Item item, String ID) {
 
         if (item.getRegistryName() == null) {
@@ -57,7 +58,9 @@ public class ModUtils {
         }
 
         item.setUnlocalizedName(Constants.MOD_ID + "." + ID.toLowerCase().replace("_", "."));
-        GameRegistry.register(item);
+        RegistryEvent.Register<Item> event = null;
+        event.getRegistry().register(item);
+        
         item.setCreativeTab(ContentHandler.BearWithMe);
         ITEMS.add(item);
         return item;

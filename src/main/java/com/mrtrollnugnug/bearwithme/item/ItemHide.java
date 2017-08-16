@@ -20,12 +20,11 @@ public class ItemHide extends Item {
         return damage;
     }
 	
-	@Override
-	public void getSubItems(Item itemIn, CreativeTabs tab, NonNullList<ItemStack> subItems)
-    {
-		for (int meta = 0; meta < varients.length; meta++) {
+    @Override
+    public void getSubItems(CreativeTabs tab, NonNullList<ItemStack> subItems) {
+    	for (int meta = 0; meta < varients.length; meta++) {
             subItems.add(new ItemStack(this, 1, meta));
-        }
+    	}
     }
 	
 	  @Override
