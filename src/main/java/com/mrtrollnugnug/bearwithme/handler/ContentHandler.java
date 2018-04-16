@@ -70,52 +70,54 @@ public class ContentHandler {
 		ModUtils.registerItem(itemHide, "hide_bear");
 	 }
 	 
-		public static void initEntities() {
+	 public static void initRecipes() {			
+	}
+	 
+	public static void initEntities() {
 			
-			final int brown = 6442291;
-			final int white = 16777215;
-			final int black = 0;
+		final int brown = 6442291;
+		final int white = 16777215;
+		final int black = 0;
 
-			EntityRegistry.registerModEntity(ContentHandler.ENTITIES_GRIZZLY_BEAR, EntityGrizzlyBear.class, "grizzlybear", 1,
-					BearWithMe.instance, 80, 3, true, brown, black);
-
-			EntityRegistry.registerModEntity(ContentHandler.ENTITIES_BLACK_BEAR, EntityBlackBear.class, "blackbear", 2,
-					BearWithMe.instance, 80, 3, true, black, brown);
-
-			EntityRegistry.registerModEntity(ContentHandler.ENTITIES_PANDA_BEAR, EntityPandaBear.class, "pandabear", 3,
-					BearWithMe.instance, 80, 3, true, white, black);
-			
-		}
+		EntityRegistry.registerModEntity(ContentHandler.ENTITIES_GRIZZLY_BEAR, EntityGrizzlyBear.class, "grizzlybear", 1,
+				BearWithMe.instance, 80, 3, true, brown, black);
 		
-		public static void initEntitySpawns() {
+		EntityRegistry.registerModEntity(ContentHandler.ENTITIES_BLACK_BEAR, EntityBlackBear.class, "blackbear", 2,
+				BearWithMe.instance, 80, 3, true, black, brown);
 
-			// Second param in addSpawn controls entity spawn rate
-			// EnumCreatureType MONSTER spawns at a much higher rate than CREATURE, causing bear overspawning
-			EntityRegistry.addSpawn(EntityGrizzlyBear.class, ConfigurationHandler.getSpawnRateGrizzly(), 1, 3,
-					EnumCreatureType.CREATURE, getBiomesForTypes(Type.PLAINS, Type.HILLS));
+		EntityRegistry.registerModEntity(ContentHandler.ENTITIES_PANDA_BEAR, EntityPandaBear.class, "pandabear", 3,
+				BearWithMe.instance, 80, 3, true, white, black);
 			
-			EntityRegistry.addSpawn(EntityBlackBear.class, ConfigurationHandler.getSpawnRateBlack(), 1, 3,
-					EnumCreatureType.CREATURE, getBiomesForTypes(Type.FOREST, Type.SPOOKY));
-			
-			EntityRegistry.addSpawn(EntityPandaBear.class, ConfigurationHandler.getSpawnRatePanda(), 1, 3,
-					EnumCreatureType.CREATURE, getBiomesForTypes(Type.JUNGLE, Type.MAGICAL));
-			
-		}
+	}
 		
-		private static Biome[] getBiomesForTypes(Type... types) {
+	public static void initEntitySpawns() {
 
-			final Collection<Biome> biomes = new ArrayList<>();
+		// Second param in addSpawn controls entity spawn rate
+		// EnumCreatureType MONSTER spawns at a much higher rate than CREATURE, causing bear overspawning
+		EntityRegistry.addSpawn(EntityGrizzlyBear.class, ConfigurationHandler.getSpawnRateGrizzly(), 1, 3,
+				EnumCreatureType.CREATURE, getBiomesForTypes(Type.PLAINS, Type.HILLS));
+			
+		EntityRegistry.addSpawn(EntityBlackBear.class, ConfigurationHandler.getSpawnRateBlack(), 1, 3,
+				EnumCreatureType.CREATURE, getBiomesForTypes(Type.FOREST, Type.SPOOKY));
+		
+		EntityRegistry.addSpawn(EntityPandaBear.class, ConfigurationHandler.getSpawnRatePanda(), 1, 3,
+				EnumCreatureType.CREATURE, getBiomesForTypes(Type.JUNGLE, Type.MAGICAL));
+	}
+		
+	private static Biome[] getBiomesForTypes(Type... types) {
 
-			for (final Type type : types) {
+		final Collection<Biome> biomes = new ArrayList<>();
 
-				biomes.addAll(BiomeDictionary.getBiomes(type));
-			}
+		for (final Type type : types) {
 
-			return biomes.toArray(new Biome[0]);
+			biomes.addAll(BiomeDictionary.getBiomes(type));
 		}
+
+		return biomes.toArray(new Biome[0]);
+	}
 	
-	 @SideOnly(Side.CLIENT)
-	    public static void onClientPreInit () {
+	@SideOnly(Side.CLIENT)
+		public static void onClientPreInit () {
 	        ModUtils.registerItemInvModel(itemHide, "hide_bear", ItemHide.varients);
 	    }	 
 }

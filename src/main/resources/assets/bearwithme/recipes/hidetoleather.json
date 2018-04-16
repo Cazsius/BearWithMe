@@ -1,0 +1,13 @@
+{
+	"type": "minecraft:crafting_shapeless",
+	"ingredients": [
+		{
+			"item": "bearwithme:hide_bear",
+			"data":32767
+      	}
+	],
+	"result": {
+		"item": "minecraft:leather",
+		"count": 1
+	}
+}
