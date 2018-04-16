@@ -1,24 +1,19 @@
-	package com.mrtrollnugnug.bearwithme.handler;
+package com.mrtrollnugnug.bearwithme.handler;
 
-import com.mrtrollnugnug.bearwithme.item.ItemBlackBootsArmor;
-import com.mrtrollnugnug.bearwithme.item.ItemBlackChestArmor;
-import com.mrtrollnugnug.bearwithme.item.ItemBlackCowlArmor;
-import com.mrtrollnugnug.bearwithme.item.ItemBlackLegsArmor;
-import com.mrtrollnugnug.bearwithme.item.ItemGrizzlyBootsArmor;
-import com.mrtrollnugnug.bearwithme.item.ItemGrizzlyChestArmor;
-import com.mrtrollnugnug.bearwithme.item.ItemGrizzlyCowlArmor;
-import com.mrtrollnugnug.bearwithme.item.ItemGrizzlyLegsArmor;
+import java.util.ArrayList;
+import java.util.Collection;
+
+import com.mrtrollnugnug.bearwithme.BearWithMe;
 import com.mrtrollnugnug.bearwithme.item.ItemHide;
 import com.mrtrollnugnug.bearwithme.lib.ModUtils;
+import com.mrtrollnugnug.bearwithme.common.entity.*;
 
 import net.minecraft.creativetab.CreativeTabs;
-import net.minecraft.init.SoundEvents;
-import net.minecraft.inventory.EntityEquipmentSlot;
+import net.minecraft.entity.EnumCreatureType;
 import net.minecraft.item.Item;
-import net.minecraft.item.ItemArmor;
-import net.minecraft.item.ItemArmor.ArmorMaterial;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.ResourceLocation;
+import net.minecraft.world.biome.Biome;
 import net.minecraft.world.storage.loot.LootEntryItem;
 import net.minecraft.world.storage.loot.LootPool;
 import net.minecraft.world.storage.loot.LootTableList;
@@ -27,10 +22,12 @@ import net.minecraft.world.storage.loot.conditions.LootCondition;
 import net.minecraft.world.storage.loot.functions.LootFunction;
 import net.minecraft.world.storage.loot.functions.SetCount;
 import net.minecraft.world.storage.loot.functions.SetMetadata;
-import net.minecraftforge.common.util.EnumHelper;
+
+import net.minecraftforge.common.BiomeDictionary;
+import net.minecraftforge.common.BiomeDictionary.Type;
 import net.minecraftforge.event.LootTableLoadEvent;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
-import net.minecraftforge.fml.common.registry.GameRegistry;
+import net.minecraftforge.fml.common.registry.EntityRegistry;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
@@ -39,36 +36,16 @@ public class ContentHandler {
 	//Generic Items
 	public static Item itemHide;
 	
-	//Armor Items
-	public static Item itemPolarBearBoots;
-	public static Item itemPolarBearLegs;
-	public static Item itemPolarBearChest;
-	public static Item itemPolarBearHead;
-	
-	public static Item itemGrizzlyBearBoots;
-	public static Item itemGrizzlyBearLegs;
-	public static Item itemGrizzlyBearChest;
-	public static Item itemGrizzlyBearHead;
-	
-	public static Item itemBlackBearBoots;
-	public static Item itemBlackBearLegs;
-	public static Item itemBlackBearChest;
-	public static Item itemBlackBearHead;
-	
-	public static Item itemPandaBearBoots;
-	public static Item itemPandaBearLegs;
-	public static Item itemPandaBearChest;
-	public static Item itemPandaBearHead;
-	
 	public static final ResourceLocation ENTITIES_GRIZZLY_BEAR = LootTableList.register(new ResourceLocation("bearwithme:entities/grizzly_bear"));
 	public static final ResourceLocation ENTITIES_BLACK_BEAR = LootTableList.register(new ResourceLocation("bearwithme:entities/black_bear"));
 	public static final ResourceLocation ENTITIES_PANDA_BEAR = LootTableList.register(new ResourceLocation("bearwithme:entities/panda_bear"));
 
-	public static final CreativeTabs BearWithMe = new CreativeTabs("BearWithMeTab")
+	public static final CreativeTabs CREATIVE_TAB = new CreativeTabs("BearWithMe")
 	{
-	   		public ItemStack getTabIconItem() {
-	   			return new ItemStack(itemHide);
-	   		}
+		@SideOnly(Side.CLIENT)	
+		public ItemStack getTabIconItem() {
+	   		return new ItemStack(itemHide);
+	   	}
 	 };
 	 
 	 @SubscribeEvent
@@ -86,113 +63,59 @@ public class ContentHandler {
 	 public static void initBlocks () {	
 	 }
 	
-	public static void initItems() {		
-		//Armor Materials
-		ArmorMaterial POLAR_BEAR = EnumHelper.addArmorMaterial("polar_bear", "bearwithme:polar_bear", 5, new int[]{3, 4, 5, 3}, 30, SoundEvents.ITEM_ARMOR_EQUIP_LEATHER, 0.0F);
-		ArmorMaterial GRIZZLY_BEAR = EnumHelper.addArmorMaterial("grizzly_bear", "bearwithme:grizzly_bear", 5, new int[]{3, 4, 6, 3}, 30, SoundEvents.ITEM_ARMOR_EQUIP_LEATHER, 0.0F);
-		ArmorMaterial BLACK_BEAR = EnumHelper.addArmorMaterial("black_bear", "bearwithme:black_bear", 5, new int[]{3, 4, 5, 2}, 30, SoundEvents.ITEM_ARMOR_EQUIP_LEATHER, 0.0F);
-		ArmorMaterial PANDA_BEAR = EnumHelper.addArmorMaterial("panda_bear", "bearwithme:panda_bear", 5, new int[]{2, 2, 3, 1}, 30, SoundEvents.ITEM_ARMOR_EQUIP_LEATHER, 0.0F);
+	 public static void initItems() {		
 		
 		//Generic Items
 		itemHide = new ItemHide();
 		ModUtils.registerItem(itemHide, "hide_bear");
-		
-		//Armor Items
-		itemPolarBearBoots = new ItemArmor(POLAR_BEAR, 0, EntityEquipmentSlot.FEET);
-		itemPolarBearLegs = new ItemArmor(POLAR_BEAR, 0, EntityEquipmentSlot.LEGS);
-		itemPolarBearChest = new ItemArmor(POLAR_BEAR, 0, EntityEquipmentSlot.CHEST);
-		itemPolarBearHead = new ItemArmor(POLAR_BEAR, 0, EntityEquipmentSlot.HEAD);
+	 }
+	 
+		public static void initEntities() {
+			
+			final int brown = 6442291;
+			final int white = 16777215;
+			final int black = 0;
 
-		ModUtils.registerItem(itemPolarBearBoots, "polar_bear_boots");
-		ModUtils.registerItem(itemPolarBearLegs, "polar_bear_legs");
-		ModUtils.registerItem(itemPolarBearChest, "polar_bear_chest");
-		ModUtils.registerItem(itemPolarBearHead, "polar_bear_head");
-		
-		itemGrizzlyBearBoots = new ItemGrizzlyBootsArmor(GRIZZLY_BEAR, 0, EntityEquipmentSlot.FEET);
-		itemGrizzlyBearLegs = new ItemGrizzlyLegsArmor(GRIZZLY_BEAR, 0, EntityEquipmentSlot.LEGS);	
-		//TODO Testing
-		itemGrizzlyBearChest = new ItemGrizzlyChestArmor(GRIZZLY_BEAR, 0, EntityEquipmentSlot.CHEST);
-		itemGrizzlyBearHead = new ItemGrizzlyCowlArmor(GRIZZLY_BEAR, 0, EntityEquipmentSlot.HEAD);
-		
-		ModUtils.registerItem(itemGrizzlyBearBoots, "grizzly_bear_boots");
-		ModUtils.registerItem(itemGrizzlyBearLegs, "grizzly_bear_legs");
-		ModUtils.registerItem(itemGrizzlyBearChest, "grizzly_bear_chest");
-		ModUtils.registerItem(itemGrizzlyBearHead, "grizzly_bear_head");		
-		
-		itemBlackBearBoots = new ItemBlackBootsArmor(BLACK_BEAR, 0, EntityEquipmentSlot.FEET);
-		itemBlackBearLegs = new ItemBlackLegsArmor(BLACK_BEAR, 0, EntityEquipmentSlot.LEGS);
-		itemBlackBearChest = new ItemBlackChestArmor(BLACK_BEAR, 0, EntityEquipmentSlot.CHEST);
-		itemBlackBearHead = new ItemBlackCowlArmor(BLACK_BEAR, 0, EntityEquipmentSlot.HEAD);
-		
-		ModUtils.registerItem(itemBlackBearBoots, "black_bear_boots");
-		ModUtils.registerItem(itemBlackBearLegs, "black_bear_legs");
-		ModUtils.registerItem(itemBlackBearChest, "black_bear_chest");
-		ModUtils.registerItem(itemBlackBearHead, "black_bear_head");
-		
-		itemPandaBearBoots = new ItemArmor(PANDA_BEAR, 0, EntityEquipmentSlot.FEET);
-		itemPandaBearLegs = new ItemArmor(PANDA_BEAR, 0, EntityEquipmentSlot.LEGS);
-		itemPandaBearChest = new ItemArmor(PANDA_BEAR, 0, EntityEquipmentSlot.CHEST);
-		itemPandaBearHead = new ItemArmor(PANDA_BEAR, 0, EntityEquipmentSlot.HEAD);
-		
-		ModUtils.registerItem(itemPandaBearBoots, "panda_bear_boots");
-		ModUtils.registerItem(itemPandaBearLegs, "panda_bear_legs");
-		ModUtils.registerItem(itemPandaBearChest, "panda_bear_chest");
-		ModUtils.registerItem(itemPandaBearHead, "panda_bear_head");	
-	}
+			EntityRegistry.registerModEntity(ContentHandler.ENTITIES_GRIZZLY_BEAR, EntityGrizzlyBear.class, "grizzlybear", 1,
+					BearWithMe.instance, 80, 3, true, brown, black);
 
-	public static void initRecipes () {
-		GameRegistry.addRecipe(new ItemStack(itemBlackBearBoots), new Object[] {"   ", "b b", "b b", 'b', new ItemStack(ContentHandler.itemHide, 1, 0)});
-		GameRegistry.addRecipe(new ItemStack(itemBlackBearBoots), new Object[] {"b b", "b b", "   ", 'b', new ItemStack(ContentHandler.itemHide, 1, 0)});
-		GameRegistry.addRecipe(new ItemStack(itemBlackBearLegs), new Object[] {"bbb", "b b", "b b", 'b', new ItemStack(ContentHandler.itemHide, 1, 0)});
-		GameRegistry.addRecipe(new ItemStack(itemBlackBearChest), new Object[] {"b b", "bbb", "bbb", 'b', new ItemStack(ContentHandler.itemHide, 1, 0)});
-		GameRegistry.addRecipe(new ItemStack(itemBlackBearHead), new Object[] {"bbb", "b b", "   ", 'b', new ItemStack(ContentHandler.itemHide, 1, 0)});
-		GameRegistry.addRecipe(new ItemStack(itemBlackBearHead), new Object[] {"   ", "bbb", "b b", 'b', new ItemStack(ContentHandler.itemHide, 1, 0)});
+			EntityRegistry.registerModEntity(ContentHandler.ENTITIES_BLACK_BEAR, EntityBlackBear.class, "blackbear", 2,
+					BearWithMe.instance, 80, 3, true, black, brown);
+
+			EntityRegistry.registerModEntity(ContentHandler.ENTITIES_PANDA_BEAR, EntityPandaBear.class, "pandabear", 3,
+					BearWithMe.instance, 80, 3, true, white, black);
+			
+		}
 		
-		GameRegistry.addRecipe(new ItemStack(itemGrizzlyBearBoots), new Object[] {"   ", "g g", "g g", 'g', new ItemStack(ContentHandler.itemHide, 1, 1)});
-		GameRegistry.addRecipe(new ItemStack(itemGrizzlyBearBoots), new Object[] {"g g", "g g", "   ", 'g', new ItemStack(ContentHandler.itemHide, 1, 1)});
-		GameRegistry.addRecipe(new ItemStack(itemGrizzlyBearLegs), new Object[] {"ggg", "g g", "g g", 'g', new ItemStack(ContentHandler.itemHide, 1, 1)});
-		GameRegistry.addRecipe(new ItemStack(itemGrizzlyBearChest), new Object[] {"g g", "ggg", "ggg", 'g', new ItemStack(ContentHandler.itemHide, 1, 1)});
-		GameRegistry.addRecipe(new ItemStack(itemGrizzlyBearHead), new Object[] {"ggg", "g g", "   ", 'g', new ItemStack(ContentHandler.itemHide, 1, 1)});
-		GameRegistry.addRecipe(new ItemStack(itemGrizzlyBearHead), new Object[] {"   ", "ggg", "g g", 'g', new ItemStack(ContentHandler.itemHide, 1, 1)});
+		public static void initEntitySpawns() {
+
+			// Second param in addSpawn controls entity spawn rate
+			// EnumCreatureType MONSTER spawns at a much higher rate than CREATURE, causing bear overspawning
+			EntityRegistry.addSpawn(EntityGrizzlyBear.class, ConfigurationHandler.getSpawnRateGrizzly(), 1, 3,
+					EnumCreatureType.CREATURE, getBiomesForTypes(Type.PLAINS, Type.HILLS));
+			
+			EntityRegistry.addSpawn(EntityBlackBear.class, ConfigurationHandler.getSpawnRateBlack(), 1, 3,
+					EnumCreatureType.CREATURE, getBiomesForTypes(Type.FOREST, Type.SPOOKY));
+			
+			EntityRegistry.addSpawn(EntityPandaBear.class, ConfigurationHandler.getSpawnRatePanda(), 1, 3,
+					EnumCreatureType.CREATURE, getBiomesForTypes(Type.JUNGLE, Type.MAGICAL));
+			
+		}
 		
-		GameRegistry.addRecipe(new ItemStack(itemPandaBearBoots), new Object[] {"   ", "p p", "p p", 'p', new ItemStack(ContentHandler.itemHide, 1, 2)});
-		GameRegistry.addRecipe(new ItemStack(itemPandaBearBoots), new Object[] {"p p", "p p", "   ", 'p', new ItemStack(ContentHandler.itemHide, 1, 2)});
-		GameRegistry.addRecipe(new ItemStack(itemPandaBearLegs), new Object[] {"ppp", "p p", "p p", 'p', new ItemStack(ContentHandler.itemHide, 1, 2)});
-		GameRegistry.addRecipe(new ItemStack(itemPandaBearChest), new Object[] {"p p", "ppp", "ppp", 'p', new ItemStack(ContentHandler.itemHide, 1, 2)});
-		GameRegistry.addRecipe(new ItemStack(itemPandaBearHead), new Object[] {"ppp", "p p", "   ", 'p', new ItemStack(ContentHandler.itemHide, 1, 2)});
-		GameRegistry.addRecipe(new ItemStack(itemPandaBearHead), new Object[] {"   ", "ppp", "p p", 'p', new ItemStack(ContentHandler.itemHide, 1, 2)});
-		
-		GameRegistry.addRecipe(new ItemStack(itemPolarBearBoots), new Object[] {"   ", "p p", "p p", 'p', new ItemStack(ContentHandler.itemHide, 1, 3)});
-		GameRegistry.addRecipe(new ItemStack(itemPolarBearBoots), new Object[] {"p p", "p p", "   ", 'p', new ItemStack(ContentHandler.itemHide, 1, 3)});
-		GameRegistry.addRecipe(new ItemStack(itemPolarBearLegs), new Object[] {"ppp", "p p", "p p", 'p', new ItemStack(ContentHandler.itemHide, 1, 3)});
-		GameRegistry.addRecipe(new ItemStack(itemPolarBearChest), new Object[] {"p p", "ppp", "ppp", 'p', new ItemStack(ContentHandler.itemHide, 1, 3)});
-		GameRegistry.addRecipe(new ItemStack(itemPolarBearHead), new Object[] {"ppp", "p p", "   ", 'p', new ItemStack(ContentHandler.itemHide, 1, 3)});
-		GameRegistry.addRecipe(new ItemStack(itemPolarBearHead), new Object[] {"   ", "ppp", "p p", 'p', new ItemStack(ContentHandler.itemHide, 1, 3)});
-		
-	}
+		private static Biome[] getBiomesForTypes(Type... types) {
+
+			final Collection<Biome> biomes = new ArrayList<>();
+
+			for (final Type type : types) {
+
+				biomes.addAll(BiomeDictionary.getBiomes(type));
+			}
+
+			return biomes.toArray(new Biome[0]);
+		}
 	
 	 @SideOnly(Side.CLIENT)
 	    public static void onClientPreInit () {
 	        ModUtils.registerItemInvModel(itemHide, "hide_bear", ItemHide.varients);
-	        
-	        ModUtils.registerItemInvModel(itemPolarBearBoots);
-	        ModUtils.registerItemInvModel(itemPolarBearLegs);
-	        ModUtils.registerItemInvModel(itemPolarBearChest);
-	        ModUtils.registerItemInvModel(itemPolarBearHead);
-	        
-	        ModUtils.registerItemInvModel(itemGrizzlyBearBoots);
-	        ModUtils.registerItemInvModel(itemGrizzlyBearLegs);
-	        ModUtils.registerItemInvModel(itemGrizzlyBearChest);
-	        ModUtils.registerItemInvModel(itemGrizzlyBearHead);
-	        
-	        ModUtils.registerItemInvModel(itemBlackBearBoots);
-	        ModUtils.registerItemInvModel(itemBlackBearLegs);
-	        ModUtils.registerItemInvModel(itemBlackBearChest);
-	        ModUtils.registerItemInvModel(itemBlackBearHead);
-	        
-	        ModUtils.registerItemInvModel(itemPandaBearBoots);
-	        ModUtils.registerItemInvModel(itemPandaBearLegs);
-	        ModUtils.registerItemInvModel(itemPandaBearChest);
-	        ModUtils.registerItemInvModel(itemPandaBearHead);       
 	    }	 
 }

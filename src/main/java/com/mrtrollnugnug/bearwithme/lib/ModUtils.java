@@ -8,13 +8,13 @@ import com.mrtrollnugnug.bearwithme.handler.ContentHandler;
 import net.minecraft.block.Block;
 import net.minecraft.client.renderer.block.model.ModelResourceLocation;
 import net.minecraft.item.Item;
-import net.minecraft.item.ItemBlock;
+import net.minecraft.item.crafting.IRecipe;
+import net.minecraft.util.SoundEvent;
+
 import net.minecraftforge.client.model.ModelLoader;
-import net.minecraftforge.event.RegistryEvent;
-import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
-import net.minecraftforge.fml.common.registry.GameRegistry;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
+import net.minecraftforge.registries.GameData;
 
 public class ModUtils {
 
@@ -27,41 +27,25 @@ public class ModUtils {
      * A list of all blocks from BearWithMe.
      */
     public static final List<Block> BLOCKS = new ArrayList<>();
-
+    
     /**
-     * Provides the same functionality as older forge tile registration.
-     *
-     * @param block The block to register.
-     * @param ID The ID to register the block with.
-     */
-    public static Block registerBlock (Block block, String ID) {
-
-        block.setRegistryName(ID);
-        block.setUnlocalizedName(Constants.MOD_ID + "." + ID.toLowerCase().replace("_", "."));
-        GameRegistry.register(block);
-        GameRegistry.register(new ItemBlock(block), block.getRegistryName());
-        block.setCreativeTab(ContentHandler.BearWithMe);
-        BLOCKS.add(block);
-        return block;
-    }
-
-    /**
-     * Provides the same functionality as older forge item registration.
-     *
-     * @param item The item to register.
-     * @param ID The ID to register the item with.
-     */
-    public static Item registerItem (Item item, String ID) {
-
-        if (item.getRegistryName() == null) {
+	 * A list of all (special) recipes from BearWithMe.
+	 */
+	public static final List<IRecipe> RECIPES = new ArrayList<>();
+	
+	/**
+	 * A list of all sounds from MoreBears.
+	 */
+	public static final List<SoundEvent> SOUNDEVENTS = new ArrayList<>();
+	
+	public static Item registerItem(Item item, String ID) {
+		if (item.getRegistryName() == null) {
             item.setRegistryName(ID);
         }
 
         item.setUnlocalizedName(Constants.MOD_ID + "." + ID.toLowerCase().replace("_", "."));
-        RegistryEvent.Register<Item> event = null;
-        event.getRegistry().register(item);
-        
-        item.setCreativeTab(ContentHandler.BearWithMe);
+        item.setCreativeTab(ContentHandler.CREATIVE_TAB);
+        GameData.register_impl(item);
         ITEMS.add(item);
         return item;
     }
@@ -73,7 +57,7 @@ public class ModUtils {
      * @param variants The names of the models to use in order of meta data.
      */
     @SideOnly(Side.CLIENT)
-    public static void registerBlockInvModel (Block block, String[] variants) {
+    public static void registerBlockInvModel(Block block, String[] variants) {
 
         registerItemInvModel(Item.getItemFromBlock(block), variants);
     }
@@ -86,7 +70,7 @@ public class ModUtils {
      * @param variants The names of the models to use in order of meta data.
      */
     @SideOnly(Side.CLIENT)
-    public static void registerBlockInvModel (Block block, String prefix, String[] variants) {
+    public static void registerBlockInvModel(Block block, String prefix, String[] variants) {
 
         registerItemInvModel(Item.getItemFromBlock(block), prefix, variants);
     }
@@ -97,7 +81,7 @@ public class ModUtils {
      * @param block The block to register models for.
      */
     @SideOnly(Side.CLIENT)
-    public static void registerBlockInvModel (Block block) {
+    public static void registerBlockInvModel(Block block) {
 
         registerItemInvModel(Item.getItemFromBlock(block), 0);
     }
@@ -109,7 +93,7 @@ public class ModUtils {
      * @param meta The meta data to register the model for.
      */
     @SideOnly(Side.CLIENT)
-    public static void registerBlockInvModel (Block block, int meta) {
+    public static void registerBlockInvModel(Block block, int meta) {
 
         registerItemInvModel(Item.getItemFromBlock(block), meta);
     }
@@ -122,7 +106,7 @@ public class ModUtils {
      * @param model The name of the model to register.
      */
     @SideOnly(Side.CLIENT)
-    public static void registerItemInvModel (Item item, int meta, String model) {
+    public static void registerItemInvModel(Item item, int meta, String model) {
 
         ModelLoader.setCustomModelResourceLocation(item, meta, new ModelResourceLocation(model, "inventory"));
     }
@@ -135,7 +119,7 @@ public class ModUtils {
      * @param variants The names of the models to use, in order of meta data.
      */
     @SideOnly(Side.CLIENT)
-    public static void registerItemInvModel (Item item, String prefix, String[] variants) {
+    public static void registerItemInvModel(Item item, String prefix, String[] variants) {
 
         for (int meta = 0; meta < variants.length; meta++) {
             ModelLoader.setCustomModelResourceLocation(item, meta, new ModelResourceLocation(item.getRegistryName().getResourceDomain() + ":" + prefix + "_" + variants[meta], "inventory"));
@@ -149,7 +133,7 @@ public class ModUtils {
      * @param variants The names of the models to use, in order of meta data.
      */
     @SideOnly(Side.CLIENT)
-    public static void registerItemInvModel (Item item, String[] variants) {
+    public static void registerItemInvModel(Item item, String[] variants) {
 
         for (int meta = 0; meta < variants.length; meta++) {
             ModelLoader.setCustomModelResourceLocation(item, meta, new ModelResourceLocation(item.getRegistryName().getResourceDomain() + ":" + variants[meta], "inventory"));
@@ -162,7 +146,7 @@ public class ModUtils {
      * @param item The item to registers a model for.
      */
     @SideOnly(Side.CLIENT)
-    public static void registerItemInvModel (Item item) {
+    public static void registerItemInvModel(Item item) {
 
         ModelLoader.setCustomModelResourceLocation(item, 0, new ModelResourceLocation(item.getRegistryName().toString(), "inventory"));
     }
@@ -174,7 +158,7 @@ public class ModUtils {
      * @param meta The meta data to register the model for.
      */
     @SideOnly(Side.CLIENT)
-    public static void registerItemInvModel (Item item, int meta) {
+    public static void registerItemInvModel(Item item, int meta) {
 
         ModelLoader.setCustomModelResourceLocation(item, meta, new ModelResourceLocation(item.getRegistryName().toString(), "inventory"));
     }

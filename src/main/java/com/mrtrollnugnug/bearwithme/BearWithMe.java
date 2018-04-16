@@ -28,9 +28,6 @@ public class BearWithMe {
     	
         ConfigurationHandler.initConfig(event.getSuggestedConfigurationFile()); 	
     	MinecraftForge.EVENT_BUS.register(new ContentHandler());
-    	ContentHandler.initBlocks();
-        ContentHandler.initItems();
-        ContentHandler.initRecipes();
         proxy.preInit();
     }
 

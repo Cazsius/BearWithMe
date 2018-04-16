@@ -1,6 +1,5 @@
 package com.mrtrollnugnug.bearwithme.client;
 
-import com.mrtrollnugnug.bearwithme.client.model.entity.ModelPandaBear;
 import com.mrtrollnugnug.bearwithme.client.render.RenderBlackBear;
 import com.mrtrollnugnug.bearwithme.client.render.RenderGrizzlyBear;
 import com.mrtrollnugnug.bearwithme.client.render.RenderPandaBear;
@@ -28,6 +27,6 @@ public class ClientProxy extends CommonProxy {
 
         RenderingRegistry.registerEntityRenderingHandler(EntityBlackBear.class, manager -> new RenderBlackBear(manager, new ModelPolarBear(), 0.7F));
 
-        RenderingRegistry.registerEntityRenderingHandler(EntityPandaBear.class, manager -> new RenderPandaBear(manager, new ModelPandaBear(), 0.7F));
+        RenderingRegistry.registerEntityRenderingHandler(EntityPandaBear.class, manager -> new RenderPandaBear(manager, new ModelPolarBear(), 0.7F));
     }
 }

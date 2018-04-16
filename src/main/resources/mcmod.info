@@ -1,7 +1,7 @@
 [{
 	"modid": "bearwithme",
 	"name": "Bear With Me",
-	"description": "A simple mod that adds bear variants to minecraft known as the Grizzly Bear, Black Bear, and Panda Bear!",
+	"description": "A simple mod that adds bear variants to Minecraft known as the Grizzly Bear, Black Bear, and Panda Bear!",
 	"version": "${version}",
 	"mcversion": "${mcversion}",
 	"url": "",

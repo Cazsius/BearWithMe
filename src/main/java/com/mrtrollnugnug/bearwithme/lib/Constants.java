@@ -11,7 +11,7 @@ public class Constants {
 
     public static final String MOD_NAME = "Bear With Me";
 
-    public static final String VERSION_NUMBER = "1.0.0.0";
+    public static final String VERSION_NUMBER = "1.3";
 
     public static final String CLIENT_PROXY_CLASS = "com.mrtrollnugnug.bearwithme.client.ClientProxy";
 

@@ -18,9 +18,9 @@ public class ConfigurationHandler {
 	    }
 	 
 	 public static void syncConfig() { 
-		 setSpawnRateGrizzly(getConfig().getInt("spawnRateGrizzly", Configuration.CATEGORY_GENERAL, 1, 0, 100, "Set Spawn Rate for Grizzly Bears"));
-		 setSpawnRateBlack(getConfig().getInt("spawnRateBlack", Configuration.CATEGORY_GENERAL, 1, 0, 100, "Set Spawn Rate for Black Bears"));
-		 setSpawnRatePanda(getConfig().getInt("spawnRatePanda", Configuration.CATEGORY_GENERAL, 1, 0, 100, "Set Spawn Rate for Panda Bears"));
+		 setSpawnRateGrizzly(getConfig().getInt("spawnRateGrizzly", Configuration.CATEGORY_GENERAL, 10, 0, 100, "Set Spawn Rate for Grizzly Bears"));
+		 setSpawnRateBlack(getConfig().getInt("spawnRateBlack", Configuration.CATEGORY_GENERAL, 10, 0, 100, "Set Spawn Rate for Black Bears"));
+		 setSpawnRatePanda(getConfig().getInt("spawnRatePanda", Configuration.CATEGORY_GENERAL, 10, 0, 100, "Set Spawn Rate for Panda Bears"));
 		
 		 if (getConfig().hasChanged())
 			 getConfig().save();
