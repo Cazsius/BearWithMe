@@ -1,0 +1,19 @@
+CHANGELOG
+
+1.12.2-1.3.1
+-Fixed hides showing up in all creative tabs
+
+1.12.2-1.3
+-Pandas are live!
+-Added bear hides
+-Added hide>leather recipe
+-Tweaked biomes for bear spawns:
+  -Grizzly: Plains & Hills
+  -Black:	Forest & Spooky
+  -Panda:	Jungle & Magical
+-Tweaked spawn egg colors 
+-Changed bear EnumCreatureType from MONSTER to CREATURE to get spawn rates under control
+-Implemented CONFIG file with spawn rate options
+-Updated to Forge v1.12.2-14.23.3.2655
+-Updated  mappings to snapshot_20171003 (as used with Forge 2655)
+-New logo file

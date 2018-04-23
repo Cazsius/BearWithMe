@@ -22,8 +22,10 @@ public class ItemHide extends Item {
 	
     @Override
     public void getSubItems(CreativeTabs tab, NonNullList<ItemStack> subItems) {
-    	for (int meta = 0; meta < varients.length; meta++) {
-            subItems.add(new ItemStack(this, 1, meta));
+    	if (isInCreativeTab(tab)){
+    		for (int meta = 0; meta < varients.length; meta++) {
+    			subItems.add(new ItemStack(this, 1, meta));
+    		}
     	}
     }
 	
