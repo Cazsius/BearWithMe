@@ -46,10 +46,10 @@ public class ContentHandler {
 		public ItemStack getTabIconItem() {
 	   		return new ItemStack(itemHide);
 	   	}
-	 };
+	};
 	 
-	 @SubscribeEvent
-	 public void onLootTablesLoaded(LootTableLoadEvent event) {
+	@SubscribeEvent
+	public void onLootTablesLoaded(LootTableLoadEvent event) {
 	     if (event.getName().equals(LootTableList.ENTITIES_POLAR_BEAR)) {   
 	    	 final LootPool main = event.getTable().getPool("main");
 	    	 if (main != null) {
@@ -57,20 +57,19 @@ public class ContentHandler {
 	    				 new SetMetadata(new LootCondition[0], new RandomValueRange(3, 3))}, new LootCondition[0], "loottable:polar_bear_hide"));
 	         }
 	     }
-	  }
-	 
+	}
 	
-	 public static void initBlocks () {	
-	 }
+	public static void initBlocks () {	
+	}
 	
-	 public static void initItems() {		
+	public static void initItems() {		
 		
 		//Generic Items
 		itemHide = new ItemHide();
 		ModUtils.registerItem(itemHide, "hide_bear");
-	 }
+	}
 	 
-	 public static void initRecipes() {			
+	public static void initRecipes() {			
 	}
 	 
 	public static void initEntities() {
@@ -94,6 +93,7 @@ public class ContentHandler {
 
 		// Second param in addSpawn controls entity spawn rate
 		// EnumCreatureType MONSTER spawns at a much higher rate than CREATURE, causing bear overspawning
+		
 		EntityRegistry.addSpawn(EntityGrizzlyBear.class, ConfigurationHandler.getSpawnRateGrizzly(), 1, 3,
 				EnumCreatureType.CREATURE, getBiomesForTypes(Type.PLAINS, Type.HILLS));
 			
@@ -117,7 +117,7 @@ public class ContentHandler {
 	}
 	
 	@SideOnly(Side.CLIENT)
-		public static void onClientPreInit () {
-	        ModUtils.registerItemInvModel(itemHide, "hide_bear", ItemHide.varients);
-	    }	 
+	public static void onClientPreInit () {
+		ModUtils.registerItemInvModel(itemHide, "hide_bear", ItemHide.varients);
+	}	 
 }

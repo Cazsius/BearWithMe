@@ -10,11 +10,12 @@ public class CommonProxy {
 		ContentHandler.initEntitySpawns();
 		ContentHandler.initBlocks();
 		ContentHandler.initItems();
-		ContentHandler.initRecipes();
-		
+				
     }	
 
     public void init() {
+    	
+    	ContentHandler.initRecipes();
 
     }
 
