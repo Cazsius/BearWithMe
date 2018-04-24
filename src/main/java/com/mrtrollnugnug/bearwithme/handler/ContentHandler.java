@@ -10,6 +10,8 @@ import com.mrtrollnugnug.bearwithme.common.entity.*;
 
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.entity.EnumCreatureType;
+import net.minecraft.entity.monster.EntityPolarBear;
+import net.minecraft.init.Biomes;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.ResourceLocation;
@@ -102,6 +104,11 @@ public class ContentHandler {
 		
 		EntityRegistry.addSpawn(EntityPandaBear.class, ConfigurationHandler.getSpawnRatePanda(), 1, 3,
 				EnumCreatureType.CREATURE, getBiomesForTypes(Type.JUNGLE, Type.MAGICAL));
+		
+		EntityRegistry.removeSpawn(EntityPolarBear.class, EnumCreatureType.MONSTER, Biomes.ICE_PLAINS, Biomes.ICE_MOUNTAINS, Biomes.MUTATED_ICE_FLATS);
+		
+		EntityRegistry.addSpawn(EntityPolarBear.class, ConfigurationHandler.getSpawnRatePolar(), 1, 3,
+				EnumCreatureType.CREATURE, Biomes.ICE_PLAINS, Biomes.MUTATED_ICE_FLATS);
 	}
 		
 	private static Biome[] getBiomesForTypes(Type... types) {

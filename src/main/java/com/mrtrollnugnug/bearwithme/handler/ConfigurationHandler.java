@@ -11,6 +11,7 @@ public class ConfigurationHandler {
 	private static int spawnRateGrizzly;
 	private static int spawnRateBlack;
 	private static int spawnRatePanda;
+	private static int spawnRatePolar;
 	 
 	    public static void initConfig(File file) {
 	        setConfig(new Configuration(file));
@@ -21,6 +22,7 @@ public class ConfigurationHandler {
 		 setSpawnRateGrizzly(getConfig().getInt("spawnRateGrizzly", Configuration.CATEGORY_GENERAL, 10, 0, 100, "Set Spawn Rate for Grizzly Bears"));
 		 setSpawnRateBlack(getConfig().getInt("spawnRateBlack", Configuration.CATEGORY_GENERAL, 10, 0, 100, "Set Spawn Rate for Black Bears"));
 		 setSpawnRatePanda(getConfig().getInt("spawnRatePanda", Configuration.CATEGORY_GENERAL, 10, 0, 100, "Set Spawn Rate for Panda Bears"));
+		 setSpawnRatePolar(getConfig().getInt("spawnRatePolar", Configuration.CATEGORY_GENERAL, 10, 0, 100, "Set Spawn Rate for Polar Bears"));
 		
 		 if (getConfig().hasChanged())
 			 getConfig().save();
@@ -45,6 +47,10 @@ public class ConfigurationHandler {
 	private static void setSpawnRatePanda(int spawnRatePanda) {
 		ConfigurationHandler.spawnRatePanda = spawnRatePanda;
 	}
+	
+	private static void setSpawnRatePolar(int spawnRatePolar) {
+		ConfigurationHandler.spawnRatePolar = spawnRatePolar;
+	}
 
 	public static int getSpawnRateGrizzly() {
 		return spawnRateGrizzly;
@@ -56,6 +62,10 @@ public class ConfigurationHandler {
 
 	public static int getSpawnRatePanda() {
 		return spawnRatePanda;
+	}
+	
+	public static int getSpawnRatePolar() {
+		return spawnRatePolar;
 	}
 
 }
