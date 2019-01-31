@@ -1,0 +1,13 @@
+#ItemGroups
+itemGroup.BearWithMe=Bear With Me
+
+#Entities
+entity.grizzlybear.name=Urso-Pardo
+entity.blackbear.name=Urso-negro
+entity.pandabear.name=Urso Panda
+
+#Items
+item.bearwithme.hide.bear.black.name=Pele de Urso-Negro
+item.bearwithme.hide.bear.grizzly.name=Pele de Urso-Pardo
+item.bearwithme.hide.bear.panda.name=Pele de Urso Panda
+item.bearwithme.hide.bear.polar.name=Pele de Urso-Polar
